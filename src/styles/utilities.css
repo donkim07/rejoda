@@ -41,22 +41,31 @@
 
 .stats-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: var(--space-lg);
+  grid-template-columns: repeat(auto-fit, minmax(min(180px, 100%), 1fr));
+  gap: clamp(1.5rem, 4vw, var(--space-lg));
   text-align: center;
+  padding: 0 clamp(0.5rem, 2vw, 1rem);
 }
 
 .stat-number {
-  font-size: clamp(3rem, 8vw, 5rem);
+  font-size: clamp(2.5rem, 8vw, 5rem);
   font-weight: 800;
   color: var(--color-accent);
   font-family: var(--font-serif);
   line-height: 1;
-  margin-bottom: 1rem;
+  margin-bottom: clamp(0.75rem, 2vw, 1rem);
 }
 
 .stat-label {
-  font-size: 1.125rem;
+  font-size: clamp(1rem, 2.5vw, 1.125rem);
   color: rgba(255, 255, 255, 0.9);
+  padding: 0 clamp(0.5rem, 2vw, 1rem);
+}
+
+@media (max-width: 480px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: clamp(1rem, 3vw, 1.5rem);
+  }
 }
 

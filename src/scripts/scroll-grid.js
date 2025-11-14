@@ -17,18 +17,22 @@ export function initScrollGrid() {
     pinSpacing: false
   });
   
-  // Animate the main scaler (center image)
+  // Animate the main scaler (center image) - responsive
   if (mainScaler) {
     const mainImage = mainScaler.querySelector('.main-image');
+    const isMobile = window.innerWidth <= 768;
+    const padding = isMobile ? '2rem' : '4rem';
+    const borderRadiusStart = isMobile ? '1rem' : '2rem';
+    const borderRadiusEnd = isMobile ? '0.5rem' : '1rem';
     
     gsap.fromTo(mainImage, {
-      width: 'calc(100vw - 4rem)',
-      height: 'calc(100vh - 4rem)',
-      borderRadius: '2rem'
+      width: `calc(100vw - ${padding})`,
+      height: `calc(100vh - ${padding})`,
+      borderRadius: borderRadiusStart
     }, {
       width: '100%',
       height: '100%',
-      borderRadius: '1rem',
+      borderRadius: borderRadiusEnd,
       duration: 2,
       ease: 'power2.out',
       scrollTrigger: {
@@ -37,6 +41,16 @@ export function initScrollGrid() {
         end: 'center center',
         scrub: 1
       }
+    });
+    
+    // Update on resize
+    window.addEventListener('resize', () => {
+      const newIsMobile = window.innerWidth <= 768;
+      const newPadding = newIsMobile ? '2rem' : '4rem';
+      const newBorderRadiusStart = newIsMobile ? '1rem' : '2rem';
+      const newBorderRadiusEnd = newIsMobile ? '0.5rem' : '1rem';
+      
+      ScrollTrigger.refresh();
     });
   }
   

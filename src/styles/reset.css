@@ -31,7 +31,7 @@ body::before {
   background-image: 
     linear-gradient(rgba(63, 220, 232, 0.03) 1px, transparent 1px),
     linear-gradient(90deg, rgba(63, 220, 232, 0.03) 1px, transparent 1px);
-  background-size: 100px 60px;
+  background-size: clamp(60px, 15vw, 100px) clamp(40px, 10vw, 60px);
   pointer-events: none;
   z-index: -1;
 }

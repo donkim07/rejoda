@@ -15,12 +15,22 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.5rem clamp(1rem, 5vw, 3rem);
+  padding: clamp(1rem, 3vw, 1.5rem) clamp(1rem, 5vw, 3rem);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  height: clamp(30px, 5vw, 40px);
+  width: auto;
 }
 
 .logo h2 {
   font-family: var(--font-serif);
-  font-size: 1.75rem;
+  font-size: clamp(1.25rem, 3vw, 1.75rem);
   background: var(--gradient-primary);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -30,14 +40,14 @@
 
 .nav-menu {
   display: flex;
-  gap: 2.5rem;
+  gap: clamp(1.5rem, 4vw, 2.5rem);
   list-style: none;
 }
 
 .nav-menu a {
   color: var(--color-text);
   font-weight: 500;
-  font-size: 0.95rem;
+  font-size: clamp(0.875rem, 2vw, 0.95rem);
   position: relative;
 }
 
@@ -72,20 +82,36 @@
 }
 
 @media (max-width: 768px) {
-  .hamburger { display: flex; }
+  .hamburger { 
+    display: flex; 
+    z-index: 1001;
+  }
   
   .nav-menu {
     position: fixed;
-    top: 80px;
+    top: clamp(60px, 12vw, 80px);
     left: -100%;
     width: 100%;
-    height: calc(100vh - 80px);
+    height: calc(100vh - clamp(60px, 12vw, 80px));
     flex-direction: column;
-    background: rgba(25, 30, 62, 0.8);;
-    padding: 2rem;
+    background: rgba(25, 30, 62, 0.95);
+    backdrop-filter: blur(20px);
+    padding: clamp(1.5rem, 5vw, 2rem);
     transition: left 0.3s ease;
+    gap: 1.5rem;
+  }
+  
+  .nav-menu a {
+    font-size: 1.125rem;
+    padding: 0.75rem 0;
   }
   
   .nav-menu.active { left: 0; }
+}
+
+@media (max-width: 480px) {
+  .nav-container {
+    padding: 0.75rem clamp(0.75rem, 3vw, 1rem);
+  }
 }
 

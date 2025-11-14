@@ -18,21 +18,22 @@
   backdrop-filter: blur(10px);
   border: 1px solid rgba(63, 220, 232, 0.1);
   border-radius: var(--radius-xl);
-  padding: var(--space-lg);
+  padding: clamp(1.5rem, 4vw, var(--space-lg));
   box-shadow: var(--shadow-lg);
-  min-height: 500px;
+  min-height: auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: var(--space-lg);
+  gap: clamp(1.5rem, 4vw, var(--space-lg));
   align-items: center;
   position: relative;
-  top: 50px;
+  top: clamp(20px, 5vw, 50px);
+  margin-bottom: clamp(2rem, 5vw, 3rem);
 }
 
 .service-icon {
-  width: 80px;
-  height: 80px;
-  margin-bottom: 2rem;
+  width: clamp(60px, 10vw, 80px);
+  height: clamp(60px, 10vw, 80px);
+  margin-bottom: clamp(1rem, 3vw, 2rem);
 }
 
 .service-icon svg {
@@ -42,15 +43,15 @@
 }
 
 .service-title {
-  font-size: 2rem;
-  margin-bottom: 1rem;
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  margin-bottom: clamp(0.75rem, 2vw, 1rem);
 }
 
 .service-description {
   color: var(--color-text-light);
-  font-size: 1.125rem;
+  font-size: clamp(1rem, 2.5vw, 1.125rem);
   line-height: 1.7;
-  margin-bottom: 2rem;
+  margin-bottom: clamp(1.5rem, 3vw, 2rem);
 }
 
 .service-features {
@@ -75,16 +76,22 @@
 
 .service-visual {
   height: 100%;
-  min-height: 300px;
+  min-height: clamp(200px, 40vw, 300px);
   background: var(--gradient-primary);
   border-radius: var(--radius-lg);
   display: flex;
   align-items: center;
   justify-content: center;
   color: white;
-  font-size: 3rem;
+  font-size: clamp(1.5rem, 5vw, 3rem);
   font-weight: 700;
   box-shadow: var(--shadow-glow);
+  padding: clamp(1rem, 3vw, 2rem);
+}
+
+.service-visual svg {
+  max-width: 100%;
+  height: auto;
 }
 
 /* Project Cards */
@@ -145,6 +152,25 @@
 @media (max-width: 968px) {
   .service-card {
     grid-template-columns: 1fr;
+    gap: clamp(1.5rem, 4vw, 2rem);
+  }
+  
+  .service-visual {
+    min-height: clamp(250px, 50vw, 350px);
+    order: -1;
+  }
+}
+
+@media (max-width: 480px) {
+  .service-card {
+    padding: clamp(1rem, 3vw, 1.5rem);
+    top: 10px;
+  }
+  
+  .service-features li {
+    font-size: clamp(0.875rem, 2.5vw, 1rem);
+    padding: 0.5rem 0;
+    padding-left: 1.5rem;
   }
 }
 

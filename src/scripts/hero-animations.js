@@ -27,16 +27,29 @@ export function initHero() {
     ease: 'power3.out'
   }, '-=0.4');
   
-  // Border radius animation on scroll
+  // Border radius animation on scroll - responsive
+  const borderRadius = window.innerWidth <= 768 ? '0 0 20px 20px' : '0 0 40px 40px';
+  const scale = window.innerWidth <= 768 ? 0.98 : 0.95;
+  
   gsap.to(heroSection, {
-    borderRadius: '0 0 40px 40px',
-    scale: 0.95,
+    borderRadius: borderRadius,
+    scale: scale,
     scrollTrigger: {
       trigger: heroSection,
       start: 'top top',
       end: 'bottom top',
       scrub: 1,
     }
+  });
+  
+  // Update on resize
+  window.addEventListener('resize', () => {
+    const newBorderRadius = window.innerWidth <= 768 ? '0 0 20px 20px' : '0 0 40px 40px';
+    const newScale = window.innerWidth <= 768 ? 0.98 : 0.95;
+    gsap.set(heroSection, {
+      borderRadius: newBorderRadius,
+      scale: newScale
+    });
   });
 }
 
