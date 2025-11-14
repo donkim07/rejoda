@@ -1,0 +1,491 @@
+/* Owners Section - iPhone Mockup with Scrolling Cards */
+.owners-section {
+  padding: var(--space-2xl) 0;
+  /* background: var(--color-bg); */
+  position: relative;
+  padding-bottom: var(--space-md);
+}
+
+.owners-height {
+  height: 600vh; /* Extended height for scroll effect - more space for last owner */
+}
+
+.owners-sticky-wrapper {
+  height: 100vh;
+  position: sticky;
+  top: 5vh;
+}
+
+.owners-section .section-header {
+  text-align: center;
+  margin-bottom: var(--space-md);
+}
+
+.owners-section h2 {
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: var(--space-md);
+}
+
+.owners-section .section-header p {
+  color: var(--color-text-light);
+  font-size: 1.25rem;
+}
+
+.owners-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--space-md);
+}
+
+.owners-card {
+  background: var(--color-bg-glass);
+  backdrop-filter: blur(20px);
+  border-radius: var(--radius-xl);
+  border: 1px solid rgba(63, 220, 232, 0.2);
+  box-shadow: var(--shadow-xl);
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 90vh;
+}
+
+/* Left section with iPhone mockup */
+.owners-left {
+  padding: var(--space-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(54, 133, 202, 0.1) 0%, rgba(63, 220, 232, 0.05) 100%);
+  position: relative;
+}
+
+.phone-mockup {
+  position: relative;
+  width: 300px;
+  height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.phone-frame {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 2;
+  filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.3));
+  top: 0;
+  left: 0;
+}
+
+/* Phone screen content area - positioned to match actual iPhone screen dimensions */
+.phone-screen {
+  position: absolute;
+  top: 0.5%;
+  left: 6.5%;
+  width: 90%;
+  height: 98%;
+  border-radius: 30px;
+  overflow: hidden;
+  z-index: 1;
+  background: #ffffff;
+}
+
+/* White screen background */
+.phone-screen-bg {
+  position: absolute;
+  top: 0.5%;
+  left: 0.5%;
+  width: 98%;
+  height: 98%;
+  z-index: 1;
+}
+
+.screen-bg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 30px;
+}
+
+.owner-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transform: translateY(100%);
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  z-index: 2;
+}
+
+.owner-image.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* When scrolling DOWN, old image exits UP */
+.owner-image.slide-out-up {
+  opacity: 0;
+  transform: translateY(-100%) !important;
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* When scrolling UP, old image exits DOWN */
+.owner-image.slide-out-down {
+  opacity: 0;
+  transform: translateY(100%) !important;
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Initial slide-in positions */
+.owner-image.slide-in-from-bottom {
+  opacity: 0;
+  transform: translateY(100%) !important;
+  transition: none !important;
+}
+
+.owner-image.slide-in-from-top {
+  opacity: 0;
+  transform: translateY(-100%) !important;
+  transition: none !important;
+}
+
+.owner-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 30px;
+}
+
+/* Right section with text cards */
+.owners-right {
+  padding: var(--space-md);
+  position: relative;
+  display: flex;
+  align-items: center;
+  border: 2px solid rgba(63, 220, 232, 0.3);
+  border-radius: var(--radius-lg);
+  margin: var(--space-sm);
+  background: rgba(25, 30, 62, 0.8);
+  backdrop-filter: blur(15px);
+}
+
+.owner-card {
+  position: absolute;
+  width: calc(100% - 1rem);
+  opacity: 0;
+  transform: translateY(120px);
+  transition: all 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  padding: var(--space-md);
+}
+
+.owner-card.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.owner-card.slide-out-up {
+  opacity: 0;
+  transform: translateY(-80px) !important;
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.owner-card.slide-out-down {
+  opacity: 0;
+  transform: translateY(120px) !important;
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Same for cards */
+.owner-card.slide-in-from-bottom {
+  opacity: 0;
+  transform: translateY(120px) !important;
+  transition: none !important;
+}
+
+.owner-card.slide-in-from-top {
+  opacity: 0;
+  transform: translateY(-120px) !important;
+  transition: none !important;
+}
+
+.owner-name {
+  font-size: 2.5rem;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: var(--space-xs);
+}
+
+.owner-title {
+  color: var(--color-accent);
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: var(--space-md);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.owner-bio {
+  margin-bottom: var(--space-lg);
+}
+
+.typing-text {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  color: var(--color-text);
+  min-height: 4.5em;
+  position: relative;
+}
+
+.typing-text::after {
+  content: '|';
+  animation: blink 0.8s infinite;
+  color: var(--color-accent);
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+.owner-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-md);
+}
+
+.owner-stats .stat {
+  text-align: center;
+  padding: var(--space-md);
+  background: rgba(63, 220, 232, 0.1);
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(63, 220, 232, 0.2);
+}
+
+.owner-stats .stat-number {
+  display: block;
+  font-size: 1.75rem;
+  font-weight: 700;
+  background: var(--gradient-secondary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: var(--space-xs);
+}
+
+.owner-stats .stat-label {
+  color: var(--color-text-light);
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Scroll indicators */
+.scroll-indicator {
+  position: absolute;
+  bottom: var(--space-md);
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: var(--space-xs);
+}
+
+.scroll-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(63, 220, 232, 0.3);
+  transition: all 0.3s ease;
+}
+
+.scroll-dot.active {
+  background: var(--color-accent);
+  transform: scale(1.2);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .owners-card {
+    grid-template-columns: 1fr;
+    min-height: 100vh;
+    height: 100vh;
+    position: relative;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+  }
+  
+  /* Phone section takes full height at bottom */
+  .owners-left {
+    padding: var(--space-lg) var(--space-sm);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    background: var(--color-bg-glass);
+    backdrop-filter: blur(20px);
+    border-radius: var(--radius-xl);
+  }
+  
+  .phone-mockup {
+    width: 280px;
+    height: 560px;
+  }
+  
+  /* The entire owners-right floats as one card from bottom to center */
+  .owners-right {
+    padding: var(--space-md);
+    position: absolute;
+    left: var(--space-sm);
+    right: var(--space-sm);
+    top: 50%;
+    transform: translateY(-50%);
+    height: auto;
+    max-height: 80vh;
+    z-index: 10;
+    border-radius: var(--radius-xl);
+    border: 2px solid rgba(63, 220, 232, 0.3);
+    overflow-y: auto;
+    margin: 0;
+    /* Animate the entire container */
+    opacity: 0;
+    transition: all 1.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  
+  /* When owners-right becomes active, it slides up and fades in */
+  .owners-right.mobile-active {
+    opacity: 1;
+  }
+  
+  /* Initial position from bottom */
+  .owners-right.mobile-slide-in-from-bottom {
+    opacity: 0;
+    transform: translate(0, calc(100vh - 50%)) !important;
+    transition: none !important;
+  }
+  
+  /* Initial position from top */
+  .owners-right.mobile-slide-in-from-top {
+    opacity: 0;
+    transform: translate(0, calc(-100vh - 50%)) !important;
+    transition: none !important;
+  }
+  
+  /* Exit to top when scrolling down */
+  .owners-right.mobile-slide-out-up {
+    opacity: 0;
+    transform: translate(0, calc(-100vh - 50%)) !important;
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+  }
+  
+  /* Exit to bottom when scrolling up */
+  .owners-right.mobile-slide-out-down {
+    opacity: 0;
+    transform: translate(0, calc(100vh - 50%)) !important;
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+  }
+  
+  /* On mobile, owner-card has no animation - just shows content */
+  .owner-card {
+    position: relative;
+    width: 100%;
+    padding: var(--space-sm);
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  
+  /* Disable individual card animations on mobile */
+  .owner-card.slide-in-from-bottom,
+  .owner-card.slide-in-from-top,
+  .owner-card.slide-out-up,
+  .owner-card.slide-out-down,
+  .owner-card.active {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  
+  /* Image animations remain */
+  .owner-image.mobile-slow-exit {
+    transition: all 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+  }
+  
+  .owner-name {
+    font-size: 1.75rem;
+  }
+  
+  .owner-title {
+    font-size: 0.95rem;
+    margin-bottom: var(--space-sm);
+  }
+  
+  .owner-bio {
+    font-size: 0.95rem;
+    margin-bottom: var(--space-md);
+  }
+  
+  .typing-text {
+    font-size: 1rem;
+    line-height: 1.6;
+    min-height: 3.5em;
+  }
+  
+  .owner-stats {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-sm);
+  }
+  
+  .owner-stats .stat {
+    padding: var(--space-sm);
+  }
+  
+  .owner-stats .stat-number {
+    font-size: 1.5rem;
+  }
+  
+  .owner-stats .stat-label {
+    font-size: 0.75rem;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .owners-right {
+    margin-right: var(--space-sm);
+    margin-left: var(--space-xs);
+  }
+  
+  .owner-name {
+    font-size: 2rem;
+  }
+  
+  .phone-mockup {
+    width: 280px;
+    height: 560px;
+  }
+}
+
+/* Animation states for visibility fixes */
+.owners-section .fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+
+.owners-section .fade-in.animate {
+  opacity: 1;
+  transform: translateY(0);
+}

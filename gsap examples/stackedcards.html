@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.co/gsap@3/dist/gsap.min.js"></script>
+</head>
+
+<body>
+
+
+<section>
+  <header>
+    <p>Tagline</p>
+    <h1>Short heading goes here</h1>
+    <div>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti architecto exercitationem voluptates? Alias, obcaecati qui suscipit totam provident asperiores temporibus eveniet a. At sapiente quo quae dolorum accusamus. Libero, temporibus!
+    </div>
+    
+    <a href="https://codepen.io/HugoSalazar/pen/dyBzOdj?editors=1100" target="_blank">
+      Version without GSAP and Javascript
+    </a>
+  </header>
+  
+<div class="l-cards">
+  <!-- CARD 1 -->
+  <div class="c-card">
+    <div class="c-card__description">
+      <div class="c-card__tagline">
+        Amon The Sign
+      </div>
+      
+      <h1 class="c-card__title">
+        Zzor / Bass
+      </h1>
+      
+      <div class="c-card__excerpt">
+        Zzor es el bajista de la banda de Darkwave española: Amon The sign
+      </div>
+      
+      <div class="c-card__cta">
+        <a href="https://www.youtube.com/watch?v=aqacOQpfbxc&ab_channel=AmonTheSign" target="_blank">Escuchar en Youtube</a>
+      </div>
+    </div>
+
+    <figure class="c-card__figure">
+      <img src="https://www.ats.hugo-salazar.com/wp-content/uploads/2023/04/zzor.jpeg" alt="Zzor">
+    </figure>
+  </div>
+  
+  <!-- CARD 2 -->
+  <div class="c-card">
+    <div class="c-card__description">
+      <div class="c-card__tagline">
+        Amon The Sign
+      </div>
+      
+      <h1 class="c-card__title">
+        Amón Lopez / Vocals
+      </h1>
+      
+      <div class="c-card__excerpt">
+        Amon Lopez es la voz masculina de la banda de Darkwave española: Amon The sign
+      </div>
+      
+      <div class="c-card__cta">
+        <a href="https://www.youtube.com/watch?v=aqacOQpfbxc&ab_channel=AmonTheSign" target="_blank">Escuchar en Youtube</a>
+      </div>
+    </div>
+
+    <figure class="c-card__figure">
+      <img src="https://www.ats.hugo-salazar.com/wp-content/uploads/2023/04/pincho.jpeg" alt="Amon Lopez">
+    </figure>
+  </div>
+  
+  <!-- CARD 3 -->
+  <div class="c-card">
+    <div class="c-card__description">
+      <div class="c-card__tagline">
+        Amon The Sign
+      </div>
+      
+      <h1 class="c-card__title">
+        Marisa / Vocals
+      </h1>
+      
+      <div class="c-card__excerpt">
+        Marisa es la voz femenina de la banda de Darkwave española: Amon The sign
+      </div>
+      
+      <div class="c-card__cta">
+        <a href="https://www.youtube.com/watch?v=aqacOQpfbxc&ab_channel=AmonTheSign" target="_blank">Escuchar en Youtube</a>
+      </div>
+    </div>
+
+    <figure class="c-card__figure">
+      <img src="https://www.ats.hugo-salazar.com/wp-content/uploads/2023/04/marisa.jpeg" alt="Amon Lopez">
+    </figure>
+  </div>
+  
+  <!-- CARD 4 -->
+  <div class="c-card">
+    <div class="c-card__description">
+      <div class="c-card__tagline">
+        Amon The Sign
+      </div>
+      
+      <h1 class="c-card__title">
+        Vicente / Guitars
+      </h1>
+      
+      <div class="c-card__excerpt">
+        Vicente es el guitarrista de la banda de Darkwave española: Amon The sign
+      </div>
+      
+      <div class="c-card__cta">
+        <a href="https://www.youtube.com/watch?v=aqacOQpfbxc&ab_channel=AmonTheSign" target="_blank">Escuchar en Youtube</a>
+      </div>
+    </div>
+
+    <figure class="c-card__figure">
+      <img src="https://www.ats.hugo-salazar.com/wp-content/uploads/2023/04/vicente.jpeg" alt="Vicente Payá">
+    </figure>
+  </div>
+  
+   <!-- CARD 5 -->
+  <div class="c-card">
+    <div class="c-card__description">
+      <div class="c-card__tagline">
+        Amon The Sign
+      </div>
+      
+      <h1 class="c-card__title">
+        Leoben Conoy / Synths
+      </h1>
+      
+      <div class="c-card__excerpt">
+        Leoben Conoy es el teclista de la banda de Darkwave española: Amon The sign
+      </div>
+      
+      <div class="c-card__cta">
+        <a href="https://www.youtube.com/watch?v=aqacOQpfbxc&ab_channel=AmonTheSign" target="_blank">Escuchar en Youtube</a>
+      </div>
+    </div>
+
+    <figure class="c-card__figure">
+      <img src="https://www.ats.hugo-salazar.com/wp-content/uploads/2023/04/leoben.jpeg" alt="Vicente Payá">
+    </figure>
+  </div>
+  
+</div>
+
+<div class="spacer"></div>
+</section>
+
+
+<style>
+  *,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+:root {
+  --color-dark: #202330;
+  --color-white: #fff;
+}
+
+body {
+  min-height: 100vh;
+  background: var(--color-dark);
+}
+
+header {
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 64px 20px;
+  color: white;
+  text-align: center;
+  
+  p {
+    margin-bottom: 16px;
+  }
+  
+  h1 {
+    margin-bottom: 24px;
+    font-size: 44px;
+  }
+  
+  div {
+    margin-bottom: 24px;
+    font-sizer: 18px;
+    line-height: 32px;
+  }
+  
+  a {
+    font-size: 24px;
+    color: var(--color-white);
+    opacity: 1;
+    transition: opacity .3s linear;
+    
+    &:hover {
+      opacity: .8;
+    }
+  }
+}
+
+.l-cards {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.c-card {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 24px;
+  margin-top: 20px;
+  width: 100%;
+  height: 90vh;
+  min-height: 600px;
+  background-color: white;
+  border: 1px solid var(--color-dark);
+  
+  .c-card__description {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 40px;
+    
+    .c-card__tagline {
+      font-size: 16px;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+    
+    .c-card__title {
+      font-size: 36px;
+    }
+    
+    .c-card__excerpt {
+      font-size: 16px;
+      line-height: 1.6;
+    }
+    
+    .c-card__cta {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-top: 32px;
+      
+      a {
+        width: max-content;
+        padding: 12px 24px;
+        border: 1px solid black;
+        color: black;
+        font-size: 16px;
+        text-decoration: none;
+      }
+    }
+  }
+    
+  .c-card__figure {
+    position: relative;
+    overflow: hidden;
+
+    img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+.spacer {
+  width: 100%;
+  height: 100vh;
+}
+
+</style>
+
+
+<script>
+  // Seleccionar todas las tarjetas y definir la distancia de stick
+const cards = gsap.utils.toArray(".c-card");
+const lastCardIndex = cards.length - 1;
+
+// Crear el ScrollTrigger para la primera y última tarjeta
+const firstCardST = ScrollTrigger.create({
+  trigger: cards[1],
+  start: "center center"
+});
+
+const lastCardST = ScrollTrigger.create({
+  trigger: cards[cards.length - 1],
+  start: "center center"
+});
+
+// Iterar sobre cada tarjeta
+cards.forEach((card, index) => {
+  const scale = index === lastCardIndex ? 1 : 0.5;
+  const scaleDown = gsap.to(card, {
+    scale: scale,
+  });
+
+  ScrollTrigger.create({
+    trigger: card,
+    start: "top top",
+    end: () => lastCardST.start,
+    pin: true,
+    pinSpacing: false,
+    scrub: 0.5,
+    ease: "none",
+    animation: scaleDown,
+    toggleActions: "restart none none reverse"
+  });
+});
+</script>
+</body>
+</html>

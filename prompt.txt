@@ -1,0 +1,255 @@
+Prompt / Specification for “Rejoda” Website (to feed to agent / developer)
+1. General Guidelines & Technical Stack
+
+Use vanilla HTML / CSS / JavaScript (no React) or a framework like Next.js without React parts or a simple static site generator, but avoid React complexity.
+
+Use GSAP (GreenSock Animation Platform) and ScrollTrigger / ScrollSmoother plugins to handle scroll animations, smooth transitions, pinning, etc.
+
+Use SVGs / vector animations / Lottie where possible for scalable and crisp visuals.
+
+Prioritize performance: lazy load images, minimize layout shifts, and keep animation CPU usage moderate.
+
+Use CSS variables (custom properties) for theme colors, spacing, typography to make styling consistent.
+
+Responsive design: all animations and layouts must work gracefully on mobile, tablet, desktop. Use media queries and conditional scroll triggers for small screens.
+
+Accessibility: make sure keyboard navigation, focus states, alt text on images, sensible tab order, and no traps caused by animations.
+
+Use ScrollSmoother for overall smooth scrolling and parallax effects. 
+GSAP
+
+Use ScrollTrigger for scroll-based animations like pinning, scrubbing, transitions. 
+GSAP
+
+2. Global Animation / Scroll Behavior
+
+Wrap your content like this:
+
+<body>
+  <div id="smooth-wrapper">
+    <div id="smooth-content">
+      <!-- all sections here -->
+    </div>
+  </div>
+  <!-- fixed / overlay items like nav can be outside or pinned -->
+</body>
+
+
+Initialize:
+
+gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
+
+ScrollSmoother.create({
+  smooth: 1,
+  effects: true,
+  smoothTouch: 0.6,
+  normalizeScroll: true,
+});
+
+
+Use data-speed or data-lag attributes on elements to create parallax or lag effects (e.g. data-speed="0.5") thanks to ScrollSmoother. 
+GSAP
+
+For sections where you want the border radius effect (edges rounding as user scrolls), use clip-path or inset() animations instead of animating border-radius (better performance) 
+GSAP
++1
+
+Use ScrollTrigger with pin: true and scrub: true to pin a section during scroll, create layered transitions (cards sliding over each other), and snap behavior. 
+GSAP
+
+3. Color / Style / Visual Theme Suggestions
+
+Choose a modern palette (e.g. dark/navy + accent (teal, gold, or medical green) + white or light backgrounds).
+
+Use soft shadows, rounded corners, smooth gradients.
+
+Use micro-interactions: hover effects, subtle motion, SVG path drawing, line animations, and reveal transitions on scroll.
+
+Use typography scale: e.g. H1, H2, H3 consistent sizes, line heights, responsive adjustments.
+
+4. Page Layouts & Section-by-Section Animation Ideas
+
+Below is a suggested structure and animation behavior for each page.
+
+🏠 Index / Home Page
+
+Hero Section
+
+Full-screen hero with background (image, gradient, or subtle pattern).
+
+On scroll, the edges of the hero container begin rounding (clip-path inset expands) turning into a card-like panel, then fully transitions to next section.
+
+Use a layered effect: headline, subheadline, CTA fade/slide in with scrub scroll.
+
+Possibly pin the hero for a moment, then release into main content.
+
+Services Snapshot / Divisions
+
+Three or more service cards (IT, Medical, Warehousing). Each card enters from different direction (left, bottom, right) with stagger.
+
+On hover, slight scale, shadow, color shift.
+
+Project Previews / Featured Work
+
+Horizontal or full-width scroll, with each project sliding over the previous (stacking effect).
+
+As you scroll, each project “card” pins momentarily, then transitions.
+
+Use images + titles + short descriptions.
+
+SVG Animated Blocks / Illustrations
+
+Use SVG icons (e.g. server, medical cross, warehouse) that animate on scroll: paths drawn, morph, color transitions.
+
+E.g. an SVG line drawing that animates as you scroll into that section.
+
+Testimonials / Partner Logos
+
+Fade-in + reveal from bottom.
+
+Use clip-path reveal masks.
+
+Call-to-Action Banner
+
+Bold CTA with background/overlay animation (gradient shift, slight parallax movement).
+
+Footer
+
+Include minimal animation (hover states on links, icons, scroll-to-top arrow with animation).
+
+ℹ️ About Us Page
+
+Top Banner / Intro
+
+Title + tagline with initial fade / slide animation.
+
+Possibly background SVG shapes that move gently on scroll (slow parallax).
+
+Founders / Team Section
+
+For each founder: side layout — left side an SVG frame or device mockup, right side text (name, role, bio).
+
+On scroll, the left SVG mockup “reveals” a photo or animates into portrait.
+
+Use ScrollTrigger to trigger that reveal when that section enters view.
+
+Vision, Mission, Values
+
+Use reveal animation on each item (icon + heading + text).
+
+Use scrub or staggered timelines.
+
+Timeline / Milestones (optional)
+
+Horizontal timeline where as user scrolls, markers or cards slide or fade in.
+
+Or “progress bar” that moves as user scrolls.
+
+Why Rejoda / Why Choose Us
+
+List of bullet features with small hover or scroll animations (e.g. icons sliding, text fading in).
+
+SVG / Decorative Elements
+
+Use abstract shapes or lines that animate (scale, rotate) in background.
+
+🧾 Projects / Case Studies Page
+
+Intro / Header
+
+Title reveal.
+
+Project Cards / Panels
+
+Each project as a full-section panel.
+
+Use the “scroll over” effect: as you scroll, new panel slides over previous, or previous slides away (stack effect).
+
+Pin each panel briefly to allow text and images to animate in (text from sides, images fade/slide).
+
+Inside Each Case Study (optional deeper page)
+
+Problem / challenge → approach → outcome.
+
+Use scroll-triggered animations: charts animate, numbers count-up, elements fade or slide in.
+
+Use SVG diagrams mocked to animate lines/paths.
+
+Navigation / Side Indicators
+
+A little indicator or progress bar to show which project you are on as you scroll.
+
+📬 Contact Page
+
+Contact Hero / Intro
+
+Big heading (e.g. “Let’s Build Together”), with text sliding in.
+
+Background shape or SVG that gently animates (parallax or wave shape).
+
+Contact Form + Info
+
+Form fields appear with staggered animation (label, input, button).
+
+On focus states, fields animate border / underline.
+
+The contact info (address, email, phone) fades in from sides.
+
+Map / Location (optional)
+
+Embed map + reveal animation (map zoom or fade).
+
+Perhaps overlay shape mask on map, then unmask on scroll.
+
+Footer / Back to Top
+
+Animated arrow, hover effects.
+
+5. Example Animation / ScrollTrigger Pseudocode Snippets
+// Border radius / clip-path effect on hero
+gsap.timeline({
+  scrollTrigger: {
+    trigger: ".hero-section",
+    start: "top top",
+    end: "bottom top",
+    scrub: true,
+    pin: true,
+  }
+})
+.fromTo(".hero-wrapper", {
+  clipPath: "inset(0% 0% 0% 0%)"
+}, {
+  clipPath: "inset(10% 10% 10% 10%)",
+  ease: "none"
+});
+
+// Parallax speed effect using ScrollSmoother
+// if element has data-speed attribute
+// e.g. <div class="layer" data-speed="0.5">...</div>
+
+// Pin & slide cards
+let panels = gsap.utils.toArray(".project-panel");
+panels.forEach((panel, i) => {
+  ScrollTrigger.create({
+    trigger: panel,
+    start: "top top",
+    end: () => "+=" + window.innerHeight,
+    pin: true,
+    pinSpacing: false,
+    scrub: true
+  });
+});
+
+// Reveal founder photo into mockup
+gsap.timeline({
+  scrollTrigger: {
+    trigger: ".founder-section",
+    start: "top 80%",
+  }
+})
+.from(".founder-mockup svg", { scale: 0.8, autoAlpha: 0 })
+.from(".founder-text", { x: 50, autoAlpha: 0, duration: 0.6 });
+
+
+You can build more timelines like this for each section. 
+Then in the end you can use npm run build to bundle the project. so make sure the programing language you use allows that

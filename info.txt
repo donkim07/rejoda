@@ -1,0 +1,183 @@
+Rejoda
+
+
+Draft 1{
+Company Name: Rejoda
+Tagline: Sering with care.
+sub tag:Innovating Solutions in Technology, Health, and Commerce
+Headquarters: Tanzania
+Founded by: Allen Zawadi, Regina Dagharo, Joan Samwel, and Donald Kimonge
+About Rejoda
+
+Rejoda is a multidisciplinary company dedicated to advancing innovation across technology, healthcare, and commerce in Tanzania. Founded by passionate professionals from both the medical and IT fields, Rejoda delivers integrated solutions ranging from web development and digital systems to pharmaceutical distribution and medical equipment supply.
+
+The company’s name — Rejoda — is derived from the initials of its founders, symbolizing teamwork, trust, and a unified vision to modernize service delivery in Africa.
+
+Vision
+
+To be a leading regional hub for digital transformation, healthcare innovation, and sustainable commerce.
+
+Mission
+
+To deliver high-quality digital and medical solutions that empower businesses, strengthen healthcare systems, and improve communities through technology and trust.
+
+Core Values
+
+Innovation: We continuously seek new ways to deliver smarter solutions.
+
+Integrity: Transparency and honesty drive every decision we make.
+
+Collaboration: Our strength lies in teamwork across disciplines.
+
+Quality: We ensure excellence in every product and service.
+
+Impact: We aim to make meaningful contributions to society.
+
+Our Divisions
+1. Rejoda IT & Digital Solutions
+
+We provide modern IT solutions for governments, organizations, and enterprises. Our services include:
+
+Web design & hosting
+
+Android & iOS app development
+
+Database systems and ERP tools
+
+Cloud deployment and cybersecurity consulting
+
+Major Projects:
+
+Pemba Government Websites Network (10+ sites): Including South Pemba, North Pemba, Chake Chake District, Micheweni, Mkoani and their councils.
+
+Waste Management Portal: (Mwanza & Tanga) – a smart waste management platform integrated with mobile apps on Google Play.
+
+2. Rejoda Medical & Pharmaceuticals
+
+Our medical division focuses on improving healthcare access through technology and distribution.
+
+Retail Pharmacy: On-site sale of medicines and health products.
+
+SKS Pharma Ltd (sister company): Online sales of medical machinery and consumables via skspharmaltd.co.tz
+.
+
+Distribution: Supplying medical equipment, laboratory devices, and cosmetics across Tanzania.
+
+3. Rejoda Warehousing & Logistics
+
+We are developing modern warehousing solutions for storage, pharmaceuticals, and general goods management, with digital inventory tracking and security integration.
+
+Our Team
+
+Allen Zawadi – Head of Medical Division
+
+Regina Dagharo – Head of Pharmaceuticals
+
+Joan Samwel – Head of IT & Digital Projects
+
+Donald Kimonge – Head of Software Development & Operations
+
+Why Choose Rejoda
+
+Multidisciplinary expertise (medical + technology)
+
+Proven portfolio of government and commercial projects
+
+Reliable after-sales and technical support
+
+Strong partnerships and regional presence
+}
+
+
+
+Draft 2{
+
+Company Name
+
+Rejoda
+
+Tagline
+
+Innovating Solutions in Technology, Health & Commerce
+
+Founders / Heads
+
+Allen Zawadi – Head of Medical Division (Pharmaceuticals & Medical Goods)
+
+Regina Dagharo – Head of Pharmaceuticals & Cosmetics Division
+
+Joan Samwel – Head of IT & Digital Solutions Division
+
+Donald Kimonge – Head of Software Development & Operations Division
+
+About Us
+
+Rejoda is a multi-faceted company rooted in Tanzania with a vision to bring together digital innovation, healthcare supplies, and commerce under one integrated brand. The name “Rejoda” stems from the founders’ initials (REgina, JOan, Donald + Allen), reflecting our collaborative spirit and shared purpose.
+
+We deliver three major lines of business:
+
+IT & Digital Solutions — building websites, mobile apps, digital platforms, system integrations for organisations, institutions and commercial clients.
+
+Medical & Pharmaceutical Commerce — retail of medicines on–site, online sales of medical machinery and consumables, distribution of medical & cosmetic goods.
+
+Warehousing & Logistics — providing modern warehousing services, inventory management coupled with digital systems and logistics support.
+
+We have a proven track record: in the IT/Digital space we’ve built and are deploying ten (10) government websites in Pemba (for districts such as South Pemba, North Pemba, Chake Chake, Micheweni, Mkoani etc.), as well as waste-management portals for Mwanza and Tanga, including associated Android apps. In the medical goods space we operate through our sister entity (SKS Pharma Ltd) and retail pharmacy operations.
+
+Vision
+
+To be a leading regional hub for digital transformation, healthcare innovation and sustainable commerce.
+
+Mission
+
+To empower businesses, strengthen healthcare systems and improve communities through high-quality digital, warehousing and medical solutions — delivered with integrity, collaboration and impact.
+
+Core Values
+
+Innovation — we craft solutions that challenge the status quo.
+
+Integrity — we act with honesty, transparency and ethics.
+
+Collaboration — our multidisciplinary team and partnerships amplify what’s possible.
+
+Quality — excellence is non-negotiable in our services, products and support.
+
+Impact — we deliberately design our work to make a real difference in society and economy.
+
+Our Divisions
+
+1. IT & Digital Solutions
+We design, develop, deploy and maintain websites, mobile apps, web platforms and digital systems. Highlights:
+
+Government website network in Pemba: South Pemba, North Pemba, Chake Chake, Micheweni, Mkoani (and their councils).
+
+Waste Management Portals & Apps for Mwanza and Tanga.
+
+Hosted websites for commercial clients (medical equipment, retail, logistics).
+
+2. Medical & Pharmaceutical Commerce
+
+On-site retail pharmacy.
+
+Online medical machinery sales via SKS Pharma Ltd (skspharmaltd.co.tz).
+
+Distribution network for pharmaceuticals, cosmetic goods, medical consumables.
+
+3. Warehousing & Logistics
+We provide warehousing solutions integrated with digital inventory & asset management systems, tailored for medical goods, general storage and logistics support.
+
+Why Choose Rejoda
+
+Combined expertise in IT/digital and medical commerce gives us unique cross-domain insight.
+
+Proven portfolio of complex projects (government websites, apps, e-commerce).
+
+End-to-end services: from design and development to deployment and maintenance.
+
+Commitment to quality, sustainability and societal impact.
+}
+
+
+projects completed:
+https://kusinipembasmz.go.tz (this is only for southpemba, but in pemba we created almost 10 websites which i have hosted tehm in my test server to show to stakeholders, now we are deploying them to the actual servers and domains, but we have only succeeded with this for southpemba, but the websites were northpemba, southpemba, chake chake district, chake chake district council, wete district, and its council, micheweni distctrict, and its council, mkoani district and its council website making all of them 10, example https://wete-pemba.wastemanagementportal.co.tz and https://wete-pemba-council.wastemanagementportal.co.tz/), completed https://skspharmaltd.co.tz, completed https://tanga.wastemanagentportal.co.tz which has an android app too but its in testing phace in play store, but same for mwanza completed https://wastemanagementportal.co.tz/waste-portal/MwanzaCity, and https://wastemanagementportal.co.tz/waste-portal/ilemela both sharing and app at https://play.google.com/store/apps/details?id=tz.co.wastemanagementportal, https://bugando-cuhas.wastemanagementportal.co.tz.
+so these are the links of projects.

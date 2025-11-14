@@ -1,0 +1,55 @@
+/* REJODA Color Variables */
+:root {
+  /* Brand Colors */
+  --color-primary: #191E3E;
+  --color-primary-light: #232944;
+  --color-accent: #3FDCE8;
+  --color-accent-dark: #3685CA;
+  --color-secondary: #AEEB8A;
+  --color-secondary-dark: #5AA396;
+  --color-red-accent: #E74C3C;
+  --color-red-medical: #DD2A59;
+  --color-red-gradient: linear-gradient(135deg, #E32755 0%, #DD2A59 100%);
+  
+  /* Text Colors */
+  --color-text: #E8E9EA;
+  --color-text-light: #B0B3B8;
+  --color-text-dark: #191E3E;
+  
+  /* Background Colors */
+  --color-bg: #191E3E;
+  --color-bg-light: #232944;
+  --color-bg-card: rgba(255, 255, 255, 0.05);
+  --color-bg-glass: rgba(255, 255, 255, 0.1);
+  
+  /* Gradients */
+  --gradient-primary: linear-gradient(135deg, #3685CA 0%, #3FDCE8 100%);
+  --gradient-secondary: linear-gradient(135deg, #5AA396 0%, #AEEB8A 100%);
+  --gradient-hero: linear-gradient(135deg, #191E3E 0%, #232944 50%, #3685CA 100%);
+  
+  /* Typography */
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-serif: 'Playfair Display', Georgia, serif;
+  
+  /* Spacing */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 2rem;
+  --space-lg: 4rem;
+  --space-xl: 6rem;
+  --space-2xl: 8rem;
+  
+  /* Border Radius */
+  --radius-sm: 0.5rem;
+  --radius-md: 1rem;
+  --radius-lg: 2rem;
+  --radius-xl: 3rem;
+  
+  /* Shadows */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.5);
+  --shadow-xl: 0 30px 60px rgba(0, 0, 0, 0.6);
+  --shadow-glow: 0 0 40px rgba(63, 220, 232, 0.3);
+}
+

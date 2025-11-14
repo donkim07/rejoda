@@ -1,0 +1,42 @@
+{
+  "name": "rejoda-website",
+  "version": "2.0.0",
+  "type": "module",
+  "description": "Rejoda - Serving with Care. Innovating Solutions in Technology, Health & Commerce",
+  "main": "index.html",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "keywords": [
+    "rejoda",
+    "gsap",
+    "scrolltrigger",
+    "scrollsmoother",
+    "tanzania",
+    "digital-transformation",
+    "healthcare",
+    "pharmaceuticals",
+    "modular-css",
+    "vanilla-javascript"
+  ],
+  "author": "Rejoda Team (Allen Zawadi, Regina Dagharo, Joan Samwel, Donald Kimonge)",
+  "license": "UNLICENSED",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rejoda/website.git"
+  },
+  "dependencies": {
+    "lenis": "^1.1.0",
+    "gsap": "^3.12.5"
+  },
+  "bugs": {
+    "url": "https://github.com/rejoda/website/issues"
+  },
+  "homepage": "https://github.com/rejoda/website#readme",
+  "devDependencies": {
+    "vite": "^7.1.12"
+  }
+}

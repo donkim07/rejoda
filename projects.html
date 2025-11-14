@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Rejoda</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="images/logo/logo no bg.svg" alt="Rejoda Logo" style="height: 40px; width: auto;">
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="projects.html" class="active">Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section" style="min-height: 80vh;">
+        <div class="hero-content">
+            <h1 class="hero-title">Our Projects</h1>
+            <p class="hero-subtitle">
+                Transforming Tanzania Through Innovation
+            </p>
+            
+            <!-- Animated Project SVG -->
+            <div class="svg-container" style="margin-top: 2rem;">
+                <svg class="animated-svg tech-icon" width="300" height="120" viewBox="0 0 300 120">
+                    <rect x="20" y="40" width="80" height="40" rx="8" fill="none" stroke="url(#gradientPrimary)" stroke-width="2"/>
+                    <rect x="120" y="30" width="80" height="60" rx="8" fill="none" stroke="url(#gradientSecondary)" stroke-width="2"/>
+                    <rect x="220" y="35" width="60" height="50" rx="8" fill="none" stroke="url(#gradientPrimary)" stroke-width="2"/>
+                    
+                    <!-- Connecting lines -->
+                    <line x1="100" y1="60" x2="120" y2="60" stroke="url(#gradientPrimary)" stroke-width="2"/>
+                    <line x1="200" y1="60" x2="220" y2="60" stroke="url(#gradientSecondary)" stroke-width="2"/>
+                    
+                    <!-- Animation dots -->
+                    <circle cx="60" cy="60" r="4" fill="url(#gradientSecondary)" class="pulse-svg"/>
+                    <circle cx="160" cy="60" r="4" fill="url(#gradientPrimary)" class="pulse-svg"/>
+                    <circle cx="250" cy="60" r="4" fill="url(#gradientSecondary)" class="pulse-svg"/>
+                </svg>
+            </div>
+        </div>
+    </section>
+
+    <!-- Detailed Project Stacked Cards -->
+    <section class="services-section">
+        <div class="container">
+            <div class="services-grid">
+                <!-- Project 1: Pemba Government Network -->
+                <div class="service-card">
+                    <div>
+                        <div class="service-icon">
+                            <svg class="tech-icon floating-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="15" y="25" width="70" height="50" rx="5" fill="none" stroke="url(#gradientPrimary)" stroke-width="2"/>
+                                <rect x="25" y="35" width="50" height="30" fill="url(#gradientSecondary)" opacity="0.3"/>
+                                <circle cx="35" cy="45" r="3" fill="url(#gradientPrimary)"/>
+                                <circle cx="50" cy="45" r="3" fill="url(#gradientPrimary)"/>
+                                <circle cx="65" cy="45" r="3" fill="url(#gradientPrimary)"/>
+                            </svg>
+                        </div>
+                        <h3 class="service-title">Pemba Government Websites Network</h3>
+                        <p class="service-description">
+                            Complete digital transformation for Pemba region including South Pemba, North Pemba, 
+                            Chake Chake, Micheweni, Wete, and Mkoani. Custom CMS, responsive design, and secure hosting.
+                        </p>
+                        <ul class="service-features">
+                            <li>10+ government websites deployed</li>
+                            <li>Custom content management system</li>
+                            <li>Secure cloud hosting infrastructure</li>
+                            <li>Mobile-responsive design</li>
+                            <li>Multi-language support</li>
+                            <li>SEO optimization</li>
+                        </ul>
+                        <a href="https://kusinipembasmz.go.tz" target="_blank" class="btn btn-primary">View Live Site</a>
+                    </div>
+                    <div class="service-visual">PEMBA</div>
+                </div>
+
+                <!-- Project 2: Waste Management -->
+                <div class="service-card">
+                    <div>
+                        <div class="service-icon">
+                            <svg class="tech-icon rotate-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="50" cy="50" r="35" fill="none" stroke="url(#gradientSecondary)" stroke-width="2"/>
+                                <path d="M30 50 L50 30 L70 50 L50 70 Z" fill="url(#gradientPrimary)" opacity="0.7"/>
+                                <circle cx="50" cy="50" r="15" fill="none" stroke="url(#gradientSecondary)" stroke-width="2"/>
+                                <path d="M40 50 L50 40 L60 50 L50 60 Z" fill="url(#gradientSecondary)"/>
+                            </svg>
+                        </div>
+                        <h3 class="service-title">Waste Management Portal & App</h3>
+                        <p class="service-description">
+                            Comprehensive waste management system for Mwanza and Tanga cities with web portal 
+                            and Android application for field operations.
+                        </p>
+                        <ul class="service-features">
+                            <li>Web-based management portal</li>
+                            <li>Android mobile application</li>
+                            <li>Real-time reporting system</li>
+                            <li>Multi-city deployment</li>
+                            <li>GPS tracking integration</li>
+                            <li>Data analytics dashboard</li>
+                        </ul>
+                        <a href="https://wastemanagementportal.co.tz/waste-portal/MwanzaCity" target="_blank" class="btn btn-primary">View Portal</a>
+                    </div>
+                    <div class="service-visual">WASTE</div>
+                </div>
+
+                <!-- Project 3: SKS Pharma Ltd -->
+                <div class="service-card">
+                    <div>
+                        <div class="service-icon">
+                            <svg class="tech-icon pulse-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M50,20 L50,80 M20,50 L80,50" stroke="url(#gradientPrimary)" stroke-width="6" stroke-linecap="round"/>
+                                <circle cx="50" cy="50" r="30" fill="none" stroke="url(#gradientSecondary)" stroke-width="2"/>
+                                <rect x="35" y="35" width="30" height="30" rx="5" fill="none" stroke="url(#gradientPrimary)" stroke-width="1"/>
+                            </svg>
+                        </div>
+                        <h3 class="service-title">SKS Pharma Ltd E-Commerce Platform</h3>
+                        <p class="service-description">
+                            Modern e-commerce platform for medical machinery and consumables with secure payment 
+                            integration and inventory management.
+                        </p>
+                        <ul class="service-features">
+                            <li>Complete e-commerce solution</li>
+                            <li>Integrated payment gateway</li>
+                            <li>Inventory management system</li>
+                            <li>Order tracking & fulfillment</li>
+                            <li>Multi-vendor support</li>
+                            <li>Mobile-responsive design</li>
+                        </ul>
+                        <a href="https://skspharmaltd.co.tz" target="_blank" class="btn btn-primary">Visit Platform</a>
+                    </div>
+                    <div class="service-visual">SKS</div>
+                </div>
+
+                <!-- Project 4: Healthcare Solutions -->
+                <div class="service-card">
+                    <div>
+                        <div class="service-icon">
+                            <svg class="tech-icon floating-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="20" y="30" width="60" height="40" rx="8" fill="none" stroke="url(#gradientSecondary)" stroke-width="2"/>
+                                <circle cx="35" cy="45" r="5" fill="url(#gradientPrimary)"/>
+                                <circle cx="50" cy="45" r="5" fill="url(#gradientSecondary)"/>
+                                <circle cx="65" cy="45" r="5" fill="url(#gradientPrimary)"/>
+                                <path d="M30 55 L70 55" stroke="url(#gradientSecondary)" stroke-width="2"/>
+                                <path d="M35 60 L65 60" stroke="url(#gradientPrimary)" stroke-width="1"/>
+                            </svg>
+                        </div>
+                        <h3 class="service-title">Healthcare Product Distribution</h3>
+                        <p class="service-description">
+                            Retail pharmacy operations and distribution network for pharmaceuticals and cosmetic products 
+                            across Tanzania with quality assurance systems.
+                        </p>
+                        <ul class="service-features">
+                            <li>On-site retail pharmacy</li>
+                            <li>100+ medical products</li>
+                            <li>Distribution network</li>
+                            <li>Quality assurance systems</li>
+                            <li>Supply chain management</li>
+                            <li>Regulatory compliance</li>
+                        </ul>
+                        <a href="contact.html" class="btn btn-primary">Learn More</a>
+                    </div>
+                    <div class="service-visual">HEALTH</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3D Zoom Technologies Section -->
+    <section class="zoom-grid-section projects">
+        <div class="container">
+            <div class="section-header" style="margin-bottom: 4rem;">
+                <h2 class="fade-in" style="color: var(--color-text);">Technologies We Use</h2>
+                <p class="section-subtitle slide-up">Cutting-edge tools and frameworks</p>
+            </div>
+        </div>
+        
+        <div class="zoom-grid">
+            <div class="zoom-item">React</div>
+            <div class="zoom-item">Node.js</div>
+            <div class="zoom-item">Python</div>
+            <div class="zoom-item">MongoDB</div>
+            <div class="zoom-item">Docker</div>
+            <div class="zoom-item">MySQL</div>
+            <div class="zoom-item">AWS</div>
+            <div class="zoom-item">Laravel</div>
+            <div class="zoom-item">Vue.js</div>
+            <div class="zoom-item">PostgreSQL</div>
+            <div class="zoom-item special">TECH STACK</div>
+            <div class="zoom-item">Kubernetes</div>
+            <div class="zoom-item">TypeScript</div>
+            <div class="zoom-item">Cloudflare</div>
+            <div class="zoom-item">VPS</div>
+            <div class="zoom-item">Redis</div>
+            <div class="zoom-item">Git</div>
+            <div class="zoom-item">Nginx</div>
+            <div class="zoom-item">Linux</div>
+            <div class="zoom-item">Jenkins</div>
+            <div class="zoom-item">GraphQL</div>
+            <div class="zoom-item">REST API</div>
+            <div class="zoom-item">Terraform</div>
+            <div class="zoom-item">Ansible</div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="section" style="background: var(--gradient-hero); color: white; text-align: center;">
+        <div class="container">
+            <div class="svg-container" style="margin-bottom: 2rem;">
+                <svg class="animated-svg pulse-svg" width="150" height="150" viewBox="0 0 150 150">
+                    <circle cx="75" cy="75" r="60" fill="none" stroke="white" stroke-width="2" opacity="0.3"/>
+                    <circle cx="75" cy="75" r="40" fill="none" stroke="white" stroke-width="2" opacity="0.6"/>
+                    <circle cx="75" cy="75" r="20" fill="white" opacity="0.9"/>
+                    <text x="75" y="85" text-anchor="middle" fill="#191E3E" font-size="24" font-weight="bold">?</text>
+                </svg>
+            </div>
+            
+            <h2 class="fade-in" style="margin-bottom: 2rem;">Have a Project in Mind?</h2>
+            <p class="slide-up" style="font-size: 1.25rem; margin-bottom: 3rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+                Let's discuss how we can help transform your ideas into reality with our innovative solutions.
+            </p>
+            <a href="contact.html" class="btn btn-primary btn-large scale-in">Start Your Project</a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <img src="images/logo/rejoda logo no bg.svg" alt="Rejoda Logo" style="height: 100px; width: auto; margin-bottom: 1rem;">
+                    
+                </div>
+                <div>
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Contact</h4>
+                    <ul class="footer-links">
+                        <li><a href="mailto:info@rejoda.co.tz">info@rejoda.co.tz</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Rejoda. All rights reserved.</p>
+                <button id="back-to-top" class="back-to-top">↑</button>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="/src/scripts/main.js"></script>
+</body>
+</html>

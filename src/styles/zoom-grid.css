@@ -1,0 +1,277 @@
+/* 3D Zoom Grid Effect (from 3Dspacialzoom.html) */
+.zoom-grid-section {
+  padding-top: 10rem;
+  min-height: 500vh;
+  position: relative;
+}
+
+.zoom-grid {
+  height: 100vh;
+  width: 100vw;
+  perspective: 300px;
+  transform-style: preserve-3d;
+  display: grid;
+  grid: repeat(6, 1fr) / repeat(6, 1fr);
+  place-items: center;
+  position: sticky;
+  top: 0;
+  overflow: hidden;
+  /* background: var(--color-bg); */
+}
+
+/* For projects page - allow more items */
+.projects .zoom-grid {
+  grid: repeat(5, 1fr) / repeat(5, 1fr);
+}
+
+.zoom-item {
+  transform-style: preserve-3d;
+  font-size: clamp(1rem, 5vmin, 3rem);
+  font-weight: 600;
+  text-wrap: nowrap;
+  padding: 1rem;
+  border-radius: var(--radius-md);
+  background: var(--color-bg-glass);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(63, 220, 232, 0.2);
+  color: var(--color-text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  will-change: transform, opacity, filter;
+  transform: translateZ(-2000px);
+  opacity: 0;
+  filter: blur(10px);
+}
+
+
+/* Zoom animation keyframes */
+@keyframes zoom-in {
+  0% {
+    transform: translateZ(-2000px);
+    opacity: 0;
+    filter: blur(10px);
+  }
+  50% {
+    transform: translateZ(0px);
+    opacity: 1;
+    filter: blur(0px);
+  }
+  100% {
+    transform: translateZ(2000px);
+    opacity: 0;
+    filter: blur(10px);
+  }
+}
+
+/* Apply animation with scroll timeline */
+@supports (animation-timeline: scroll()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .zoom-item {
+      animation: zoom-in linear both;
+      animation-timeline: scroll(root block);
+      will-change: transform, opacity, filter;
+    }
+  }
+}
+
+.zoom-item.special {
+  grid-row: 3 / span 1;
+  grid-column: 3 / span 1;
+  background: var(--gradient-primary);
+  color: white;
+  font-size: clamp(2rem, 10vmin, 6rem);
+  border: 2px solid var(--color-accent);
+  box-shadow: var(--shadow-glow);
+}
+
+/* Projects page - animation ranges (starts after section fully covers screen) */
+@supports (animation-timeline: scroll()) {
+  .projects .zoom-item.special { animation-range: 13% 78%; }
+  .projects .zoom-item:nth-child(1) { animation-range: 25% 70%; }
+  .projects .zoom-item:nth-child(2) { animation-range: 37% 42%; }
+  .projects .zoom-item:nth-child(3) { animation-range: 69% 44%; }
+  .projects .zoom-item:nth-child(4) { animation-range: 13% 66%; }
+  .projects .zoom-item:nth-child(6) { animation-range: 33% 78%; }
+  .projects .zoom-item:nth-child(7) { animation-range: 25% 90%; }
+  .projects .zoom-item:nth-child(8) { animation-range: 47% 72%; }
+  .projects .zoom-item:nth-child(9) { animation-range: 49% 74%; }
+  .projects .zoom-item:nth-child(10) { animation-range: 51% 76%; }
+  .projects .zoom-item:nth-child(11) { animation-range: 43% 78%; }
+  .projects .zoom-item:nth-child(12) { animation-range: 25% 80%; }
+  .projects .zoom-item:nth-child(13) { animation-range: 57% 82%; }
+  .projects .zoom-item:nth-child(14) { animation-range: 29% 84%; }
+  .projects .zoom-item:nth-child(15) { animation-range: 31% 66%; }
+  .projects .zoom-item:nth-child(16) { animation-range: 13% 68%; }
+  .projects .zoom-item:nth-child(17) { animation-range: 65% 90%; }
+  .projects .zoom-item:nth-child(18) { animation-range: 27% 92%; }
+  .projects .zoom-item:nth-child(19) { animation-range: 29% 64%; }
+  .projects .zoom-item:nth-child(20) { animation-range: 45% 56%; }
+  .projects .zoom-item:nth-child(21) { animation-range: 65% 90%; }
+  .projects .zoom-item:nth-child(22) { animation-range: 27% 92%; }
+  .projects .zoom-item:nth-child(23) { animation-range: 29% 64%; }
+  .projects .zoom-item:nth-child(24) { animation-range: 45% 56%; }
+}
+
+/* Index page specific styles */
+.index-page .zoom-grid-section {
+  min-height: 1500vh; /* Increased for longer scroll distance */
+}
+
+.index-page .zoom-grid {
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 2rem;
+  padding: 2rem;
+}
+
+/* Index page - special item doesn't animate, stays in center */
+.index-page .zoom-item.special {
+  grid-row: 2 / span 1;
+  grid-column: 2 / span 2;
+  transform: translateZ(0px) !important;
+  opacity: 1 !important;
+  filter: blur(0px) !important;
+  animation: none !important;
+}
+
+/* Index page zoom animation - items stop at center and arrange */
+@keyframes zoom-arrange {
+  0% {
+    transform: translateZ(-2000px);
+    opacity: 0;
+    filter: blur(10px);
+  }
+  40% {
+    transform: translateZ(0px);
+    opacity: 1;
+    filter: blur(0px);
+  }
+  100% {
+    transform: translateZ(0px);
+    opacity: 1;
+    filter: blur(0px);
+  }
+}
+
+@supports (animation-timeline: scroll()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .index-page .zoom-item:not(.special) {
+      animation: zoom-arrange linear both;
+      animation-timeline: scroll(root block);
+      will-change: transform, opacity, filter;
+    }
+  }
+}
+
+/* Index page animation ranges - slower, ends later */
+@supports (animation-timeline: scroll()) {
+  .index-page .zoom-item:nth-child(1) { animation-range: 9% 20%; }
+  .index-page .zoom-item:nth-child(2) { animation-range: 17% 32%; }
+  .index-page .zoom-item:nth-child(3) { animation-range: 19% 34%; }
+  .index-page .zoom-item:nth-child(4) { animation-range: 11% 31%; }
+  .index-page .zoom-item:nth-child(6) { animation-range: 7% 28%; }
+  .index-page .zoom-item:nth-child(7) { animation-range: 25% 30%; }
+  .index-page .zoom-item:nth-child(8) { animation-range: 27% 32%; }
+  .index-page .zoom-item:nth-child(9) { animation-range: 13% 34%; }
+  .index-page .zoom-item:nth-child(10) { animation-range: 21% 33%; }
+  .index-page .zoom-item:nth-child(11) { animation-range: 23% 35%; }
+}
+
+/* Grid positioning for index page */
+.index-page .zoom-item:nth-child(1) {
+  grid-row: 1;
+  grid-column: 1;
+}
+
+.index-page .zoom-item:nth-child(2) {
+  grid-row: 1;
+  grid-column: 2;
+}
+
+.index-page .zoom-item:nth-child(3) {
+  grid-row: 1;
+  grid-column: 3;
+}
+
+.index-page .zoom-item:nth-child(4) {
+  grid-row: 1;
+  grid-column: 4;
+}
+
+/* Special item at row 2, columns 2-3 */
+.index-page .zoom-item:nth-child(5) {
+  grid-row: 2;
+  grid-column: 2 / span 2;
+}
+
+.index-page .zoom-item:nth-child(6) {
+  grid-row: 2;
+  grid-column: 1;
+}
+
+.index-page .zoom-item:nth-child(7) {
+  grid-row: 2;
+  grid-column: 4;
+}
+
+.index-page .zoom-item:nth-child(8) {
+  grid-row: 3;
+  grid-column: 1;
+}
+
+.index-page .zoom-item:nth-child(9) {
+  grid-row: 3;
+  grid-column: 2;
+}
+
+.index-page .zoom-item:nth-child(10) {
+  grid-row: 3;
+  grid-column: 3;
+}
+
+.index-page .zoom-item:nth-child(11) {
+  grid-row: 3;
+  grid-column: 4;
+}
+
+@media (max-width: 768px) {
+  .zoom-grid {
+    grid: repeat(3, 1fr) / repeat(3, 1fr);
+  }
+  
+  .projects .zoom-grid {
+    grid: repeat(4, 1fr) / repeat(4, 1fr);
+  }
+  
+  .index-page .zoom-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    gap: 1rem;
+    padding: 1rem;
+  }
+  
+  .zoom-item.special {
+    grid-row: 2 / span 1;
+    grid-column: 2 / span 1;
+  }
+  
+  .index-page .zoom-item.special {
+    grid-row: 3 / span 1;
+    grid-column: 1 / span 2;
+  }
+  
+  /* Mobile grid positions for index page */
+  .index-page .zoom-item:nth-child(1) { grid-row: 1; grid-column: 1; }
+  .index-page .zoom-item:nth-child(2) { grid-row: 1; grid-column: 2; }
+  .index-page .zoom-item:nth-child(3) { grid-row: 2; grid-column: 1; }
+  .index-page .zoom-item:nth-child(4) { grid-row: 2; grid-column: 2; }
+  .index-page .zoom-item:nth-child(5) { grid-row: 3; grid-column: 1 / span 2; }
+  .index-page .zoom-item:nth-child(6) { grid-row: 4; grid-column: 1; }
+  .index-page .zoom-item:nth-child(7) { grid-row: 4; grid-column: 2; }
+  .index-page .zoom-item:nth-child(8) { grid-row: 5; grid-column: 1; }
+  .index-page .zoom-item:nth-child(9) { grid-row: 5; grid-column: 2; }
+  .index-page .zoom-item:nth-child(10) { grid-row: 6; grid-column: 1; }
+  .index-page .zoom-item:nth-child(11) { grid-row: 6; grid-column: 2; }
+}

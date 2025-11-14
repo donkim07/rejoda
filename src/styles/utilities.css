@@ -1,0 +1,62 @@
+/* Utility Classes */
+.text-center {
+  text-align: center;
+}
+
+.mt-12 {
+  margin-top: 3rem;
+}
+
+/* Animation Initial States */
+.fade-in,
+.slide-up,
+.scale-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+
+.fade-in.animate,
+.slide-up.animate,
+.scale-in.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.scale-in.animate {
+  transform: scale(1) translateY(0);
+}
+
+.scale-in {
+  transform: scale(0.8) translateY(30px);
+}
+
+/* Stats Section */
+.stats-section {
+  background: var(--color-primary);
+  color: white;
+  padding-top: var(--space-2xl);
+
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--space-lg);
+  text-align: center;
+}
+
+.stat-number {
+  font-size: clamp(3rem, 8vw, 5rem);
+  font-weight: 800;
+  color: var(--color-accent);
+  font-family: var(--font-serif);
+  line-height: 1;
+  margin-bottom: 1rem;
+}
+
+.stat-label {
+  font-size: 1.125rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
