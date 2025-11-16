@@ -3,7 +3,8 @@
 /* Service Cards */
 .services-section {
   /* background: var(--color-bg); */
-  padding: var(--space-2xl) 0;
+  padding: clamp(1.5rem, 4vw, var(--space-xl)) 0;
+  padding-top: clamp(1rem, 3vw, 2.5rem);
 }
 
 .services-grid {
@@ -24,9 +25,9 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: clamp(1.5rem, 4vw, var(--space-lg));
-  align-items: center;
+  align-items: start;
   position: relative;
-  top: clamp(20px, 5vw, 50px);
+  top: 0;
   margin-bottom: clamp(2rem, 5vw, 3rem);
 }
 
@@ -50,19 +51,21 @@
 .service-description {
   color: var(--color-text-light);
   font-size: clamp(1rem, 2.5vw, 1.125rem);
-  line-height: 1.7;
-  margin-bottom: clamp(1.5rem, 3vw, 2rem);
+  line-height: 1.6;
+  margin-bottom: clamp(1.25rem, 2.5vw, 1.75rem);
 }
 
 .service-features {
   list-style: none;
-  margin-bottom: 2rem;
+  margin-bottom: clamp(1.25rem, 2.5vw, 1.75rem);
 }
 
 .service-features li {
-  padding: 0.75rem 0;
-  padding-left: 2rem;
+  padding: clamp(0.5rem, 1.2vw, 0.75rem) 0;
+  padding-left: clamp(1.5rem, 3vw, 2rem);
   position: relative;
+  font-size: clamp(0.875rem, 2vw, 1rem);
+  line-height: 1.5;
 }
 
 .service-features li::before {

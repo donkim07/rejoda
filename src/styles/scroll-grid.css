@@ -2,6 +2,22 @@
 .scroll-grid-section {
   min-height: 300vh;
   position: relative;
+  margin-top: clamp(4rem, 8vw, 8rem);
+  padding-top: clamp(2rem, 5vw, 4rem);
+  margin-bottom: clamp(4rem, 8vw, 8rem);
+}
+
+/* Contact page - reduce scroll grid height so CTA appears sooner */
+.contact-scroll-grid {
+  min-height: 200vh;
+  margin-bottom: clamp(4rem, 8vw, 8rem);
+}
+
+/* Contact page CTA section spacing */
+.contact-cta-section {
+  margin-top: 0;
+  padding-top: clamp(3rem, 6vw, 6rem);
+  padding-bottom: clamp(3rem, 6vw, 6rem);
 }
 
 .scroll-content {
@@ -12,7 +28,7 @@
   align-content: center;
   position: sticky;
   top: 0;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 .image-grid {
@@ -75,7 +91,7 @@
   color: white;
   font-weight: 700;
   font-size: clamp(0.875rem, 2.5vw, 2rem);
-  padding: clamp(0.5rem, 2vw, 1rem);
+  /* padding: clamp(0.5rem, 2vw, 1rem); */
   word-wrap: break-word;
   text-align: center;
 }
@@ -110,7 +126,7 @@
   color: var(--color-text-dark);
   font-size: clamp(1.5rem, 4vw, 4rem);
   font-weight: 800;
-  padding: clamp(0.5rem, 2vw, 1rem);
+  /* padding: clamp(0.5rem, 2vw, 1rem); */
 }
 
 .main-image img {
@@ -130,6 +146,8 @@
 @media (max-width: 768px) {
   .scroll-grid-section {
     min-height: 250vh;
+    margin-top: clamp(2rem, 5vw, 4rem);
+    padding-top: clamp(1rem, 3vw, 2rem);
   }
   
   .image-grid {
@@ -138,7 +156,7 @@
   }
   
   .grid-layer:nth-child(1) {
-    display: none;
+    display: grid !important;
   }
   
   .main-scaler {
@@ -147,6 +165,7 @@
   
   .grid-image {
     font-size: clamp(0.75rem, 3vw, 1.5rem);
+    padding: clamp(0.25rem, 1vw, 0.5rem);
   }
   
   .main-image {
@@ -155,12 +174,47 @@
 }
 
 @media (max-width: 480px) {
+  .scroll-grid-section {
+    margin-top: clamp(2rem, 5vw, 4rem);
+    padding-top: clamp(1rem, 3vw, 2rem);
+    margin-bottom: clamp(2rem, 5vw, 4rem);
+  }
+  
+  .contact-scroll-grid {
+    margin-bottom: clamp(2rem, 5vw, 4rem);
+  }
+  
+  .contact-cta-section {
+    margin-top: clamp(2rem, 5vw, 4rem);
+    padding-top: clamp(2rem, 4vw, 3rem);
+  }
+  
   .image-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: clamp(4px, 1vw, 8px);
+    gap: clamp(3px, 1vw, 6px);
+    width: min(98vw, 100%);
   }
   
   .main-scaler {
     grid-area: 2 / 1 / span 1 / span 2;
+  }
+  
+  .grid-image {
+    font-size: clamp(0.65rem, 2.5vw, 1rem);
+    padding: clamp(0.25rem, 1vw, 0.5rem);
+    aspect-ratio: 3 / 4;
+  }
+  
+  .main-image {
+    font-size: clamp(1rem, 4vw, 1.75rem);
+  }
+  
+  /* Show all grid images on small screens */
+  .grid-layer {
+    display: grid !important;
+  }
+  
+  .grid-layer:nth-child(1) {
+    display: grid !important;
   }
 }

@@ -5,6 +5,12 @@ export function initHero() {
   const heroSection = document.querySelector('.hero-section');
   if (!heroSection) return;
   
+  // Set initial state for buttons to ensure visibility
+  const heroButtons = document.querySelectorAll('.hero-cta .btn');
+  heroButtons.forEach(btn => {
+    gsap.set(btn, { opacity: 1, visibility: 'visible' });
+  });
+  
   // Entrance animations
   const tl = gsap.timeline();
   tl.from('.hero-title', {
@@ -24,7 +30,8 @@ export function initHero() {
     opacity: 0,
     duration: 0.6,
     stagger: 0.2,
-    ease: 'power3.out'
+    ease: 'power3.out',
+    immediateRender: false
   }, '-=0.4');
   
   // Border radius animation on scroll - responsive

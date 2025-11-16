@@ -1,13 +1,14 @@
 /* 3D Zoom Grid Effect (from 3Dspacialzoom.html) */
 .zoom-grid-section {
   padding-top: 10rem;
-  min-height: 500vh;
+  min-height: 650vh;
   position: relative;
 }
 
 .zoom-grid {
   height: 100vh;
-  width: 100vw;
+  width: 100%;
+  max-width: 100vw;
   perspective: 300px;
   transform-style: preserve-3d;
   display: grid;
@@ -16,6 +17,9 @@
   position: sticky;
   top: 0;
   overflow: hidden;
+  padding: 0;
+  box-sizing: border-box;
+  margin: 0;
   /* background: var(--color-bg); */
 }
 
@@ -26,10 +30,10 @@
 
 .zoom-item {
   transform-style: preserve-3d;
-  font-size: clamp(1rem, 5vmin, 3rem);
+  font-size: clamp(0.875rem, 4vmin, 2.5rem);
   font-weight: 600;
   text-wrap: nowrap;
-  padding: 1rem;
+  padding: clamp(0.5rem, 1.5vw, 0.875rem);
   border-radius: var(--radius-md);
   background: var(--color-bg-glass);
   backdrop-filter: blur(10px);
@@ -43,6 +47,10 @@
   transform: translateZ(-2000px);
   opacity: 0;
   filter: blur(10px);
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+  word-break: break-word;
 }
 
 
@@ -81,9 +89,12 @@
   grid-column: 3 / span 1;
   background: var(--gradient-primary);
   color: white;
-  font-size: clamp(2rem, 10vmin, 6rem);
+  font-size: clamp(1.5rem, 8vmin, 5rem);
   border: 2px solid var(--color-accent);
   box-shadow: var(--shadow-glow);
+  padding: clamp(0.75rem, 2vw, 1.25rem);
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 /* Projects page - animation ranges (starts after section fully covers screen) */
@@ -122,8 +133,14 @@
 .index-page .zoom-grid {
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(3, 1fr);
-  gap: 2rem;
-  padding: 2rem;
+  gap: clamp(0.5rem, 1.5vw, 1rem);
+  padding: clamp(0.75rem, 2vw, 1.5rem);
+  max-width: 100vw;
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0;
+  left: 0;
+  right: 0;
 }
 
 /* Index page - special item doesn't animate, stays in center */
@@ -134,6 +151,10 @@
   opacity: 1 !important;
   filter: blur(0px) !important;
   animation: none !important;
+  font-size: clamp(1.25rem, 6vmin, 4rem);
+  padding: clamp(0.5rem, 1.5vw, 1rem);
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 /* Index page zoom animation - items stop at center and arrange */
@@ -172,11 +193,11 @@
   .index-page .zoom-item:nth-child(3) { animation-range: 19% 34%; }
   .index-page .zoom-item:nth-child(4) { animation-range: 11% 31%; }
   .index-page .zoom-item:nth-child(6) { animation-range: 7% 28%; }
-  .index-page .zoom-item:nth-child(7) { animation-range: 25% 30%; }
-  .index-page .zoom-item:nth-child(8) { animation-range: 27% 32%; }
+  .index-page .zoom-item:nth-child(7) { animation-range: 21% 30%; }
+  .index-page .zoom-item:nth-child(8) { animation-range: 23% 30%; }
   .index-page .zoom-item:nth-child(9) { animation-range: 13% 34%; }
   .index-page .zoom-item:nth-child(10) { animation-range: 21% 33%; }
-  .index-page .zoom-item:nth-child(11) { animation-range: 23% 35%; }
+  .index-page .zoom-item:nth-child(11) { animation-range: 23% 32%; }
 }
 
 /* Grid positioning for index page */
@@ -239,27 +260,43 @@
 @media (max-width: 968px) {
   .zoom-grid-section {
     padding-top: clamp(5rem, 12vw, 10rem);
-    min-height: 400vh;
+    min-height: 1200vh;
   }
   
   .zoom-grid {
     gap: clamp(0.5rem, 2vw, 1rem);
     padding: clamp(0.5rem, 2vw, 1rem);
+    width: 100%;
+    max-width: 100vw;
+  }
+  
+  .index-page .zoom-grid {
+    gap: clamp(0.375rem, 1.2vw, 0.75rem);
+    padding: clamp(0.5rem, 1.5vw, 1rem);
   }
   
   .zoom-item {
-    padding: clamp(0.5rem, 2vw, 1rem);
-    font-size: clamp(0.875rem, 3vw, 1.5rem);
+    padding: clamp(0.375rem, 1.5vw, 0.75rem);
+    font-size: clamp(0.75rem, 2.5vw, 1.25rem);
+    max-width: 100%;
   }
   
   .zoom-item.special {
-    font-size: clamp(1.5rem, 6vw, 4rem);
+    font-size: clamp(1.25rem, 5vw, 3rem);
+    padding: clamp(0.5rem, 1.5vw, 0.875rem);
+  }
+  
+  .index-page .zoom-item.special {
+    font-size: clamp(1rem, 5vw, 2.5rem);
   }
 }
 
 @media (max-width: 768px) {
   .zoom-grid {
     grid: repeat(3, 1fr) / repeat(3, 1fr);
+    width: 100%;
+    max-width: 100vw;
+    padding: clamp(0.5rem, 2vw, 1rem);
   }
   
   .projects .zoom-grid {
@@ -269,18 +306,27 @@
   .index-page .zoom-grid {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(6, 1fr);
-    gap: clamp(0.5rem, 2vw, 1rem);
+    gap: clamp(0.375rem, 1.5vw, 0.75rem);
     padding: clamp(0.5rem, 2vw, 1rem);
+    width: 100%;
+    max-width: 100vw;
+  }
+  
+  .zoom-item {
+    max-width: 100%;
+    padding: clamp(0.375rem, 1.5vw, 0.75rem);
   }
   
   .zoom-item.special {
     grid-row: 2 / span 1;
     grid-column: 2 / span 1;
+    max-width: 100%;
   }
   
   .index-page .zoom-item.special {
     grid-row: 3 / span 1;
     grid-column: 1 / span 2;
+    max-width: 100%;
   }
   
   /* Mobile grid positions for index page */
@@ -299,15 +345,32 @@
 
 @media (max-width: 480px) {
   .zoom-grid-section {
-    min-height: 350vh;
+    min-height: 450vh;
+  }
+  
+  .zoom-grid {
+    width: 100%;
+    max-width: 100vw;
+    padding: clamp(0.375rem, 1.5vw, 0.75rem);
+  }
+  
+  .index-page .zoom-grid {
+    gap: clamp(0.25rem, 1vw, 0.5rem);
+    padding: clamp(0.375rem, 1.5vw, 0.75rem);
   }
   
   .zoom-item {
-    font-size: clamp(0.75rem, 4vw, 1.25rem);
-    padding: clamp(0.375rem, 2vw, 0.75rem);
+    font-size: clamp(0.7rem, 3.5vw, 1.1rem);
+    padding: clamp(0.25rem, 1.5vw, 0.5rem);
+    max-width: 100%;
   }
   
   .zoom-item.special {
-    font-size: clamp(1.25rem, 8vw, 2.5rem);
+    font-size: clamp(1rem, 7vw, 2rem);
+    padding: clamp(0.375rem, 1.5vw, 0.625rem);
+  }
+  
+  .index-page .zoom-item.special {
+    font-size: clamp(0.875rem, 6vw, 1.75rem);
   }
 }
