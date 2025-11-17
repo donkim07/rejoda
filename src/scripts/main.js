@@ -23,6 +23,7 @@ import { initTimelineSection } from './timeline-section.js';
 import { initPageLoader } from './page-loader.js';
 import { initHeroRobot } from './hero-robot.js';
 import { initHeroRobotMobile } from './hero-robot-mobile.js';
+import { initRouter } from './router.js';
 
 
 // Import styles
@@ -53,6 +54,9 @@ gsap.registerPlugin(ScrollTrigger);
 
 // Initialize everything
 document.addEventListener('DOMContentLoaded', () => {
+  // Initialize router for clean URL handling
+  initRouter();
+  
   const lenis = initSmoothScroll();
   
   // Create SVG gradients first

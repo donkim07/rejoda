@@ -10,10 +10,17 @@ export function initAnimeNavbar() {
   let hoveredTab = null;
 
   // Set initial active state based on current page
-  const currentPath = window.location.pathname;
+  const currentPath = window.location.pathname.replace(/\.html$/, '').replace(/^\/+/, '');
   navItems.forEach(item => {
     const href = item.getAttribute('href');
-    if (href && (currentPath.includes(href) || (currentPath === '/' && href === 'index.html'))) {
+    const hrefPath = href ? href.replace(/^\/+/, '').replace(/\.html$/, '') : '';
+    
+    // Match current path with href (handle both clean URLs and .html)
+    const isActive = (currentPath === '' || currentPath === 'index') 
+      ? (hrefPath === '' || hrefPath === 'index' || href === '/' || href === '/index.html')
+      : (currentPath === hrefPath || currentPath === hrefPath + '.html');
+    
+    if (isActive) {
       item.classList.add('active');
       activeTab = item.dataset.tab || item.textContent.trim();
     } else {
@@ -101,10 +108,16 @@ function updateActiveState(tabName) {
 function createMascot(parentItem) {
   const navbar = document.querySelector('.anime-navbar');
   
-  // Remove existing mascot
+  // Remove existing mascot with animation
   const existingMascot = navbar.querySelector('.anime-mascot');
   if (existingMascot) {
-    existingMascot.remove();
+    gsap.to(existingMascot, {
+      scale: 0,
+      opacity: 0,
+      duration: 0.3,
+      ease: 'power2.in',
+      onComplete: () => existingMascot.remove()
+    });
   }
 
   const mascot = document.createElement('div');
@@ -130,7 +143,22 @@ function createMascot(parentItem) {
   parentItem.style.position = 'relative';
   parentItem.appendChild(mascot);
   
-  animateMascotIdle();
+  // Animate mascot appearance (jump in)
+  gsap.fromTo(mascot, 
+    {
+      scale: 0,
+      opacity: 0,
+      y: -20
+    },
+    {
+      scale: 1,
+      opacity: 1,
+      y: 0,
+      duration: 0.5,
+      ease: 'back.out(2)',
+      onComplete: () => animateMascotIdle()
+    }
+  );
 }
 
 function animateMascotHover() {
