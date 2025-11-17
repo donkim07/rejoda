@@ -12,13 +12,36 @@
   border-radius: 0 0 clamp(2rem, 5vw, 3rem) clamp(2rem, 5vw, 3rem);
 }
 
+.hero-robot-background {
+  position: absolute;
+  bottom: 5%;
+  right: 2%;
+  width: clamp(200px, 35vw, 400px);
+  height: clamp(200px, 40vw, 500px);
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.8;
+}
+
+.hero-robot-background canvas {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain;
+}
+
 .hero-content {
   text-align: center;
   max-width: min(1000px, 90vw);
   margin: 0 auto;
   padding: 0 clamp(1rem, 4vw, 2rem);
   position: relative;
-  z-index: 1;
+  z-index: 2;
+}
+
+@media (max-width: 768px) {
+  .hero-content {
+    margin-bottom: 2rem;
+  }
 }
 
 .hero-title {
@@ -96,6 +119,38 @@
   .hero-svg-top-right,
   .hero-svg-bottom-left {
     display: none; /* Hide decorative SVGs on mobile for better performance */
+  }
+  
+  .hero-section {
+    flex-direction: column;
+    /* justify-content: flex-start; */
+    padding-top: clamp(120px, 8vw, 80px);
+  }
+  
+  .hero-robot-background {
+    position: relative;
+    order: 2; /* Appears after hero-content */
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: auto;
+    width: clamp(350px, 100vw, 550px);
+    height: clamp(50px, 120vw, 620px);
+    margin: 0 auto 0;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+    align-self: center;
+  }
+  
+  .hero-robot-background.scroll-visible {
+    opacity: 0.9;
+    transform: translateY(0);
+  }
+  
+  .hero-content {
+    order: 1; /* Appears before robot */
+    margin-bottom: 0;
   }
 }
 

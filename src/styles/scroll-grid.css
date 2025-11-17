@@ -10,14 +10,17 @@
 /* Contact page - reduce scroll grid height so CTA appears sooner */
 .contact-scroll-grid {
   min-height: 200vh;
-  margin-bottom: clamp(4rem, 8vw, 8rem);
+  margin-bottom: clamp(6rem, 10vw, 10rem);
+  padding-bottom: clamp(4rem, 8vw, 8rem);
 }
 
 /* Contact page CTA section spacing */
 .contact-cta-section {
-  margin-top: 0;
-  padding-top: clamp(3rem, 6vw, 6rem);
-  padding-bottom: clamp(3rem, 6vw, 6rem);
+  margin-top: clamp(6rem, 12vw, 12rem);
+  padding-top: clamp(5rem, 10vw, 10rem);
+  padding-bottom: clamp(5rem, 10vw, 10rem);
+  position: relative;
+  z-index: 10;
 }
 
 .scroll-content {
@@ -29,6 +32,10 @@
   position: sticky;
   top: 0;
   /* overflow: hidden; */
+}
+
+.contact-scroll-grid .scroll-content {
+  position: relative;
 }
 
 .image-grid {

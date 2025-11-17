@@ -19,6 +19,10 @@ import { initCounters } from './counters.js';
 import { initRevealAnimations } from './reveals.js';
 import { initBackToTop } from './back-to-top.js';
 import { initFormHandler } from './form-handler.js';
+import { initTimelineSection } from './timeline-section.js';
+import { initPageLoader } from './page-loader.js';
+import { initHeroRobot } from './hero-robot.js';
+import { initHeroRobotMobile } from './hero-robot-mobile.js';
 
 
 // Import styles
@@ -39,6 +43,8 @@ import '../styles/partners.css';
 import '../styles/testimonials.css';
 import '../styles/animated-svgs.css';
 import '../styles/owners.css';
+import '../styles/timeline-section.css';
+import '../styles/page-loader.css';
 import '../styles/footer.css';
 import '../styles/utilities.css';
 
@@ -57,6 +63,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initAnimeNavbar();
   initProcessSection();
   initHero();
+  initHeroRobot();
+  initHeroRobotMobile();
   initStackedCards();
   initStickyProjects();
   initZoomGrid();
@@ -66,6 +74,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initTestimonials();
   initAnimatedSVGs();
   initOwners();
+  initTimelineSection();
+  initPageLoader();
   initCounters();
   initRevealAnimations();
   initBackToTop(lenis);
