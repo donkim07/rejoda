@@ -9,7 +9,7 @@
 
 /* Contact page - reduce scroll grid height so CTA appears sooner */
 .contact-scroll-grid {
-  min-height: 200vh;
+  min-height: 280vh;
   margin-bottom: clamp(6rem, 10vw, 10rem);
   padding-bottom: clamp(4rem, 8vw, 8rem);
 }
@@ -210,10 +210,11 @@
 
 @media (max-width: 768px) {
   .scroll-grid-section {
-    min-height: 250vh;
-    margin-top: clamp(2rem, 5vw, 4rem);
+    min-height: 150vh;
+    margin-top: clamp(3rem, 5vw, 4rem);
     padding-top: clamp(1rem, 3vw, 2rem);
   }
+  
   
   .image-grid {
     grid-template-columns: repeat(3, 1fr);
@@ -250,7 +251,7 @@
   }
   
   .contact-cta-section {
-    margin-top: clamp(2rem, 5vw, 4rem);
+    margin-top: clamp(7rem, 5vw, 4rem);
     padding-top: clamp(2rem, 4vw, 3rem);
   }
   

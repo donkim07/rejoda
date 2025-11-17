@@ -6,8 +6,42 @@ export function initZoomGrid() {
   const zoomSection = document.querySelector('.zoom-grid-section');
   if (!zoomSection) return;
   
-  const zoomItems = gsap.utils.toArray('.zoom-item');
-  if (zoomItems.length === 0) return;
+  // Wait for loader to complete if it exists (overflow needs to be restored first)
+  const hasLoader = document.querySelector('.page-loader');
+  
+  if (hasLoader) {
+    // Wait for loader to complete before initializing ScrollTrigger
+    const onLoaderComplete = () => {
+      window.removeEventListener('loaderComplete', onLoaderComplete);
+      // Initialize after overflow is restored
+      requestAnimationFrame(() => {
+        const zoomItems = gsap.utils.toArray('.zoom-item');
+        if (zoomItems.length === 0) return;
+        initZoomGridAnimations(zoomSection, zoomItems);
+      });
+    };
+    
+    window.addEventListener('loaderComplete', onLoaderComplete);
+    
+    // Fallback: if loader is already done
+    if (!document.body.classList.contains('loader-active')) {
+      requestAnimationFrame(() => {
+        const zoomItems = gsap.utils.toArray('.zoom-item');
+        if (zoomItems.length === 0) return;
+        initZoomGridAnimations(zoomSection, zoomItems);
+      });
+    }
+  } else {
+    // No loader, initialize normally
+    requestAnimationFrame(() => {
+      const zoomItems = gsap.utils.toArray('.zoom-item');
+      if (zoomItems.length === 0) return;
+      initZoomGridAnimations(zoomSection, zoomItems);
+    });
+  }
+}
+
+function initZoomGridAnimations(zoomSection, zoomItems) {
   
   const isIndexPage = zoomSection.classList.contains('index-page');
   const isProjectsPage = zoomSection.classList.contains('projects');
@@ -30,6 +64,8 @@ export function initZoomGrid() {
   // The CSS handles everything
   if (hasScrollSupport) {
     console.log('Using CSS scroll-linked animations');
+    // Refresh ScrollTrigger to ensure it recognizes the section
+    ScrollTrigger.refresh();
     return;
   }
   
@@ -176,4 +212,7 @@ export function initZoomGrid() {
       });
     });
   }
+  
+  // Refresh ScrollTrigger after creating all animations
+  ScrollTrigger.refresh();
 }

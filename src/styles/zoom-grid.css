@@ -259,7 +259,7 @@
 
 @media (max-width: 968px) {
   .zoom-grid-section {
-    padding-top: clamp(5rem, 12vw, 10rem);
+    /* padding-top: clamp(5rem, 12vw, 10rem); */
     min-height: 1200vh;
   }
   

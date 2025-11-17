@@ -4,14 +4,108 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Rejoda - Innovating Solutions in Technology, Health & Commerce">
-    <title>Rejoda - Serving with Care</title>
+    <meta name="description" content="Rejoda - Innovating Solutions in Technology, Health & Commerce. Leading digital transformation, healthcare innovation, and sustainable commerce across Tanzania and East Africa.">
+    <meta name="keywords" content="Rejoda, Tanzania, digital transformation, healthcare, pharmaceuticals, IT solutions, web development, mobile apps, e-commerce, logistics, technology services">
+    <meta name="author" content="Rejoda">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+    <meta name="revisit-after" content="7 days">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://rejoda.co.tz/">
+    <meta property="og:title" content="Rejoda - Serving with Care">
+    <meta property="og:description" content="Innovating Solutions in Technology, Health & Commerce across Tanzania and East Africa">
+    <meta property="og:image" content="https://rejoda.co.tz/images/logo/rejoda logo no bg no cap.svg">
+    <meta property="og:site_name" content="Rejoda">
+    <meta property="og:locale" content="en_US">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://rejoda.co.tz/">
+    <meta name="twitter:title" content="Rejoda - Serving with Care">
+    <meta name="twitter:description" content="Innovating Solutions in Technology, Health & Commerce across Tanzania and East Africa">
+    <meta name="twitter:image" content="https://rejoda.co.tz/images/logo/rejoda logo no bg no cap.svg">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://rejoda.co.tz/">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/images/logo/logo no bg.svg">
+    <link rel="apple-touch-icon" href="/images/logo/logo no bg.svg">
+    
+    <title>Rejoda - Serving with Care | Technology, Health & Commerce Solutions</title>
+    
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Rejoda",
+      "url": "https://rejoda.co.tz",
+      "logo": "https://rejoda.co.tz/images/logo/rejoda logo no bg no cap.svg",
+      "description": "Innovating Solutions in Technology, Health & Commerce across Tanzania and East Africa",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "TZ"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "info@rejoda.co.tz",
+        "contactType": "Customer Service"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/company/rejoda",
+        "https://twitter.com/rejoda"
+      ]
+    }
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
     <!-- Bootstrap 5 CSS -->
     <link href="styles/bootstrap.min.css" rel="stylesheet" >
+    <!-- Prevent white flicker - loader background -->
+    <style>
+        html, body {
+          background: linear-gradient(135deg, #191E3E 0%, #0F1220 100%) !important;
+          margin: 0;
+          padding: 0;
+        }
+        
+        /* Only hide overflow while loader is active */
+        body.loader-active {
+          overflow: hidden;
+        }
+        
+        /* Hide ALL content including loader until JavaScript initializes */
+        /* Use opacity only (not visibility) so GSAP/ScrollTrigger can calculate positions */
+        /* Elements are rendered but invisible - GSAP can work with them */
+        body > * {
+          opacity: 0;
+          pointer-events: none;
+        }
+        
+        /* Show loader once initialized */
+        body.loader-ready .page-loader {
+          opacity: 1;
+          pointer-events: auto;
+        }
+        
+        /* Keep content hidden while loader is active - but rendered for GSAP */
+        body.loader-active > *:not(.page-loader) {
+          opacity: 0;
+          pointer-events: none;
+        }
+        
+        /* Show content when loader is done (body no longer has loader-active class) */
+        body.loader-ready:not(.loader-active) > *:not(.page-loader) {
+          opacity: 1;
+          pointer-events: auto;
+          transition: opacity 0.3s ease;
+        }
+      </style>
 </head>
-<body>
+<body class="loader-active">
     <!-- Page Loader -->
     <div class="page-loader">
         <div class="loader-content">
@@ -414,7 +508,7 @@
                             </div>
                             <div class="project-visual">
                                 <video width="100%" height="300" controls poster="images/projects/waste-poster.jpg" autoplay loop muted playsinline preload="auto">
-                                    <source src="videos/waste-management.mp4" type="video/mp4">
+                                    <!-- <source src="videos/waste-management.mp4" type="video/mp4"> -->
                                     <source src="videos/waste-management.webm" type="video/webm">
                                     Your browser does not support the video tag.
                                 </video>
@@ -422,7 +516,7 @@
                             </div>
                             <div class="project-visual">
                                 <video width="100%" height="300" controls poster="images/projects/sks-poster.jpg" autoplay loop muted playsinline preload="auto">
-                                    <source src="videos/sks-pharmacy.mp4" type="video/mp4">
+                                    <!-- <source src="videos/sks-pharmacy.mp4" type="video/mp4"> -->
                                     <source src="videos/sks-pharmacy.webm" type="video/webm">
                                     Your browser does not support the video tag.
                                 </video>

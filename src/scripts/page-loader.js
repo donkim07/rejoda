@@ -3,12 +3,25 @@ import gsap from 'gsap';
 
 export function initPageLoader() {
   const loader = document.querySelector('.page-loader');
-  if (!loader) return;
+  const body = document.body;
+  
+  if (!loader) {
+    // No loader on this page, just show content
+    body.classList.remove('loader-active');
+    body.classList.add('content-ready');
+    return;
+  }
 
   const logoGroup = loader.querySelector('#logo');
   const logoNameGroup = loader.querySelector('#logo_name');
   
-  if (!logoGroup || !logoNameGroup) return;
+  // Mark loader as ready - this will show the loader
+  body.classList.add('loader-ready');
+  
+  if (!logoGroup || !logoNameGroup) {
+    // If SVG structure is missing, still show loader
+    return;
+  }
 
   // Get all paths
   const logoPaths = logoGroup.querySelectorAll('path');
@@ -133,14 +146,26 @@ export function initPageLoader() {
         ease: 'power2.in'
       }, 0.15);
       
-      // Finally fade out loader
+      // Finally fade out loader and show content
       hideTL.to(loader, {
         opacity: 0,
         duration: 0.4,
         ease: 'power2.in',
         onComplete: () => {
+          body.classList.remove('loader-active');
+          body.style.overflow = '';
           loader.style.display = 'none';
-          loader.remove();
+          
+          // Dispatch custom event to notify that loader is done
+          window.dispatchEvent(new CustomEvent('loaderComplete'));
+          
+          setTimeout(() => {
+            loader.remove();
+            // Refresh ScrollTrigger after content is visible to ensure all animations work
+            if (typeof ScrollTrigger !== 'undefined') {
+              ScrollTrigger.refresh();
+            }
+          }, 400);
         }
       }, 0.2);
     }, remaining);

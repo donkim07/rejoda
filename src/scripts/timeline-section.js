@@ -26,7 +26,7 @@ export function initTimelineSection() {
 
   // Store ScrollTrigger instances for cleanup
   const scrollTriggers = [];
-
+  
   // Animate each timeline item with smooth scroll effects
   timelineItems.forEach((item, index) => {
     const year = item.dataset.year;
@@ -122,7 +122,7 @@ export function initTimelineSection() {
       }
     });
     scrollTriggers.push(itemTrigger);
-
+    
     // Parallax effect on scroll
     const parallaxTrigger = ScrollTrigger.create({
       trigger: item,
@@ -183,8 +183,8 @@ export function initTimelineSection() {
         }
         if (firstText) {
           gsap.to(firstText, { x: 0, opacity: 1, duration: 0.7, delay: 0.6 });
-        }
-        
+}
+
         timelineItems[0].classList.add('active');
         if (ladderMarkers[0]) ladderMarkers[0].classList.add('active');
       }

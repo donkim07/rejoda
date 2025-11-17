@@ -3,17 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact - Rejoda</title>
+    <meta name="description" content="Contact Rejoda for technology solutions, healthcare services, and commerce solutions. Get in touch with our team in Tanzania.">
+    <meta name="keywords" content="contact Rejoda, Rejoda Tanzania, IT services contact, healthcare solutions contact, technology consulting Tanzania">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://rejoda.co.tz/contact">
+    <meta property="og:title" content="Contact - Rejoda">
+    <meta property="og:description" content="Get in touch with Rejoda for innovative technology, healthcare, and commerce solutions in Tanzania and East Africa.">
+    <meta property="og:image" content="https://rejoda.co.tz/images/logo/rejoda logo no bg no cap.svg">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:url" content="https://rejoda.co.tz/contact">
+    <meta name="twitter:title" content="Contact - Rejoda">
+    <meta name="twitter:description" content="Get in touch with Rejoda for innovative technology, healthcare, and commerce solutions.">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://rejoda.co.tz/contact">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/images/logo/logo no bg.svg">
+    
+    <title>Contact - Rejoda | Get In Touch</title>
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+    <!-- Prevent white flicker - loader background -->
+    <style>
+      html, body {
+        background: linear-gradient(135deg, #191E3E 0%, #0F1220 100%) !important;
+        margin: 0;
+        padding: 0;
+      }
+      
+      /* Hide content initially, show after page load */
+      body > * {
+        opacity: 0;
+        visibility: hidden;
+      }
+      
+      body.content-ready > * {
+        opacity: 1;
+        visibility: visible;
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+      }
+    </style>
 </head>
 <body>
     <!-- Anime Navigation -->
     <nav class="anime-navbar">
-        <div class="logo">
-            <img src="images/logo/logo no bg.svg" alt="Rejoda Logo">
-        </div>
         <div class="anime-navbar-container">
+            <div class="logo">
+                <img src="images/logo/logo no bg.svg" alt="Rejoda Logo">
+            </div>
             <a href="/" class="anime-nav-item" data-tab="Home">
                 <span class="nav-text">Home</span>
                 <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
@@ -78,10 +122,10 @@
 
     <!-- Contact Form Section -->
     <section class="section">
-        <div class="container">
+        <div class="container" style="padding: 0 clamp(0.1rem, 0.1vw, 0.1rem);">
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 4rem; align-items: start;">
                 <!-- Contact Form -->
-                <div class="fade-in" style="background: var(--color-bg-glass); backdrop-filter: blur(10px); border: 1px solid rgba(63, 220, 232, 0.1); border-radius: var(--radius-lg); padding: 3rem;">
+                <div class="fade-in" style="background: var(--color-bg-glass); backdrop-filter: blur(10px); border: 1px solid rgba(63, 220, 232, 0.1); border-radius: var(--radius-lg); padding: 1rem;">
                     <div class="svg-container" style="margin-bottom: 2rem; text-align: center;">
                         <svg class="animated-svg tech-icon" width="80" height="80" viewBox="0 0 80 80">
                             <rect x="10" y="20" width="60" height="40" rx="5" fill="none" stroke="url(#gradientPrimary)" stroke-width="2"/>

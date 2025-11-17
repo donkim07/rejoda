@@ -85,6 +85,18 @@ document.addEventListener('DOMContentLoaded', () => {
   initBackToTop(lenis);
   initFormHandler();
   
+  // Show content on pages without loader
+  if (!document.querySelector('.page-loader')) {
+    document.body.classList.add('content-ready');
+    document.body.classList.remove('loader-active');
+  }
+  
+  // Refresh ScrollTrigger after a short delay to ensure all elements are ready
+  // This is especially important for zoom-grid and other ScrollTrigger animations
+  setTimeout(() => {
+    ScrollTrigger.refresh();
+  }, 100);
+  
   console.log('%cREJODA Website', 'color: #3FDCE8; font-size: 20px; font-weight: bold;');
   console.log('%cPowered by Advanced GSAP Effects', 'color: #AEEB8A;');
 });
