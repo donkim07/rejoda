@@ -1,0 +1,209 @@
+/* Anime Navbar Styles - Based on React component but vanilla CSS/JS */
+.anime-navbar {
+  position: fixed;
+  top: 20px;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  padding-top: 24px;
+  pointer-events: none;
+}
+
+.anime-navbar-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: linear-gradient(135deg, rgba(25, 30, 62, 0.7) 0%, rgba(35, 41, 68, 0.6) 50%, rgba(54, 133, 202, 0.4) 100%);
+  border: 1px solid rgba(63, 220, 232, 0.2);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  padding: 8px;
+  border-radius: 9999px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3), 0 0 20px rgba(63, 220, 232, 0.1);
+  pointer-events: all;
+  transform: translateY(-20px);
+  opacity: 0;
+  animation: slideDown 0.6s ease forwards;
+}
+
+@keyframes slideDown {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.anime-nav-item {
+  position: relative;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 12px 24px;
+  border-radius: 9999px;
+  transition: all 0.3s;
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.anime-nav-item:hover {
+  color: white;
+}
+
+.anime-nav-item.active {
+  color: white;
+}
+
+/* Active item glow effect */
+.anime-nav-item.active::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 9999px;
+  z-index: -1;
+  background: rgba(63, 220, 232, 0.3);
+  filter: blur(12px);
+  animation: pulseGlow 2s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.03);
+  }
+}
+
+.anime-nav-item.active::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 9999px;
+  z-index: -2;
+  background: rgba(63, 220, 232, 0.25);
+  filter: blur(20px);
+}
+
+/* Shine effect removed */
+
+/* Hover effect */
+.anime-nav-item:not(.active):hover::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.1);
+  z-index: -1;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Mascot (animated icon above active item) */
+.anime-mascot {
+  position: absolute;
+  top: -48px;
+  left: 50%;
+  transform: translateX(-50%);
+  pointer-events: none;
+  width: 48px;
+  height: 48px;
+}
+
+.anime-mascot-circle {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background: white;
+  border-radius: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: mascotFloat 2s ease-in-out infinite;
+}
+
+@keyframes mascotFloat {
+  0%, 100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(-3px);
+  }
+}
+
+.anime-mascot-eye {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: black;
+  border-radius: 50%;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.anime-mascot-eye.left {
+  left: 30%;
+  transform: translate(-50%, -50%);
+}
+
+.anime-mascot-eye.right {
+  right: 30%;
+  left: auto;
+  transform: translate(50%, -50%);
+}
+
+.anime-mascot-mouth {
+  position: absolute;
+  width: 16px;
+  height: 8px;
+  border-bottom: 2px solid black;
+  border-radius: 0 0 50% 50%;
+  left: 30%;
+  top: 60%;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .anime-nav-item {
+    padding: 12px;
+  }
+  
+  .anime-nav-item .nav-text {
+    display: none;
+  }
+  
+  .anime-nav-item .nav-icon {
+    display: block;
+    width: 18px;
+    height: 18px;
+  }
+}
+
+.nav-icon {
+  display: none;
+  width: 18px;
+  height: 18px;
+}
+
+@media (max-width: 768px) {
+  .nav-icon {
+    display: block;
+  }
+}
+

@@ -3,6 +3,8 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { initSmoothScroll } from './smooth-scroll.js';
 import { initNavigation } from './navigation.js';
+import { initAnimeNavbar } from './anime-navbar.js';
+import { initProcessSection } from './process-section.js';
 import { initHero } from './hero-animations.js';
 import { initStackedCards } from './stacked-cards.js';
 import { initStickyProjects } from './sticky-projects.js';
@@ -24,6 +26,8 @@ import '../styles/variables.css';
 import '../styles/reset.css';
 import '../styles/layout.css';
 import '../styles/navigation.css';
+import '../styles/anime-navbar.css';
+import '../styles/process-section.css';
 import '../styles/hero.css';
 import '../styles/buttons.css';
 import '../styles/cards.css';
@@ -50,6 +54,8 @@ document.addEventListener('DOMContentLoaded', () => {
   
   // Initialize all effects
   initNavigation();
+  initAnimeNavbar();
+  initProcessSection();
   initHero();
   initStackedCards();
   initStickyProjects();

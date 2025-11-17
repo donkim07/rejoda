@@ -1,5 +1,6 @@
 // Hero Section Animations
 import gsap from 'gsap';
+import { initHeroTitleAnimation } from './hero-title-animation.js';
 
 export function initHero() {
   const heroSection = document.querySelector('.hero-section');
@@ -33,6 +34,9 @@ export function initHero() {
     ease: 'power3.out',
     immediateRender: false
   }, '-=0.4');
+  
+  // Initialize hero title word animation
+  initHeroTitleAnimation();
   
   // Border radius animation on scroll - responsive
   const borderRadius = window.innerWidth <= 768 ? '0 0 20px 20px' : '0 0 40px 40px';

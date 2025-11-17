@@ -35,7 +35,7 @@
 .stats-section {
   background: var(--color-primary);
   color: white;
-  padding-top: var(--space-2xl);
+  /* padding-top: var(--space-2xl); */
 
 }
 
