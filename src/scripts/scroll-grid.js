@@ -79,11 +79,9 @@ export function initScrollGrid() {
     const images = layer.querySelectorAll('.grid-image');
     images.forEach((image, imgIndex) => {
       gsap.fromTo(image, {
-        scale: 0.8,
         opacity: 0,
         rotateY: 45
       }, {
-        scale: 1,
         opacity: 1,
         rotateY: 0,
         duration: 0.8,

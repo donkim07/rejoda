@@ -89,7 +89,7 @@
   grid-column: 3 / span 1;
   background: var(--gradient-primary);
   color: white;
-  font-size: clamp(1.5rem, 8vmin, 5rem);
+  /* font-size: clamp(1.5rem, 8vmin, 5rem); */
   border: 2px solid var(--color-accent);
   box-shadow: var(--shadow-glow);
   padding: clamp(0.75rem, 2vw, 1.25rem);
@@ -282,7 +282,7 @@
   }
   
   .zoom-item.special {
-    font-size: clamp(1.25rem, 5vw, 3rem);
+    /* font-size: clamp(1.25rem, 5vw, 3rem); */
     padding: clamp(0.5rem, 1.5vw, 0.875rem);
   }
   

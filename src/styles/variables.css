@@ -26,6 +26,8 @@
   --gradient-primary: linear-gradient(135deg, #3685CA 0%, #3FDCE8 100%);
   --gradient-secondary: linear-gradient(135deg, #5AA396 0%, #AEEB8A 100%);
   --gradient-hero: linear-gradient(135deg, #191E3E 0%, #232944 50%, #3685CA 100%);
+  --gradient-cards: linear-gradient(135deg, #3685ca00 0%, #3fdce817 100%);
+  --gradient-grids: linear-gradient(135deg, #3685ca47 0%, #3fdce84a 100%);
   
   /* Typography */
   --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
