@@ -60,8 +60,20 @@
       ]
     }
     </script>
+    <!-- Resource Hints for Performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="/styles/bootstrap.min.css" as="style">
+    <link rel="preload" href="/images/logo/logo no bg.svg" as="image">
+    <link rel="preload" href="/src/scripts/main.js" as="script">
+    
+    <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+    
     <!-- Bootstrap 5 CSS -->
     <link href="styles/bootstrap.min.css" rel="stylesheet" >
     <!-- Prevent white flicker - loader background -->
