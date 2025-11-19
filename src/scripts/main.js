@@ -24,6 +24,7 @@ import { initPageLoader } from './page-loader.js';
 import { initHeroRobot } from './hero-robot.js';
 import { initHeroRobotMobile } from './hero-robot-mobile.js';
 import { initRouter } from './router.js';
+import { initCacheManager } from './cache-manager.js';
 
 
 // Import styles
@@ -54,6 +55,9 @@ gsap.registerPlugin(ScrollTrigger);
 
 // Initialize everything
 document.addEventListener('DOMContentLoaded', () => {
+  // Initialize cache manager and service worker (early for better caching)
+  initCacheManager();
+  
   // Initialize router for clean URL handling
   initRouter();
   
